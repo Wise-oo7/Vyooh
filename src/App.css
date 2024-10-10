@@ -1,0 +1,302 @@
+/* General background for the chessboard */
+.chessboard-background {
+  background-image: url('/g.jpg'); /* Replace with the correct path if the image is in the public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* Main container for the rectangles */
+.rectangle-container {
+  position: relative;
+  top: 40px;
+  left: 20px;
+  width: 90vw;
+  max-width: 700px;
+  height: 90vw;
+  max-height: 600px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Red outer rectangle that surrounds everything */
+.c {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  z-index: -1; /* Puts the red rectangle behind the buttons */
+}
+
+.rectangle {
+  width: 100%;
+  height: 100%;
+}
+
+/* Button styles */
+.rectangle-button {
+  position: absolute;
+  width: 10px;
+  height: 22px;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 10px;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-button {
+  background-color: white;
+  border: 3px solid red;
+}
+
+/* Button positions for the 3 rectangles */
+/* Outer Rectangle */
+.rectangle-container button:nth-child(1) { top: 4%; left: 4%; }
+.rectangle-container button:nth-child(2) { top: 4%; left: 50%; transform: translateX(-50%); }
+.rectangle-container button:nth-child(3) { top: 4%; right: 4%; }
+.rectangle-container button:nth-child(4) { top: 50%; left: 4%; transform: translateY(-50%); }
+.rectangle-container button:nth-child(5) { top: 50%; right: 4%; transform: translateY(-50%); }
+.rectangle-container button:nth-child(6) { bottom: 4%; left: 4%; }
+.rectangle-container button:nth-child(7) { bottom: 4%; left: 50%; transform: translateX(-50%); }
+.rectangle-container button:nth-child(8) { bottom: 4%; right: 4%; }
+
+/* Middle Rectangle */
+.rectangle-container button:nth-child(9) { top: 19%; left: 19%; }
+.rectangle-container button:nth-child(10) { top: 18%; left: 50%; transform: translateX(-50%); }
+.rectangle-container button:nth-child(11) { top: 19%; right: 19%; }
+.rectangle-container button:nth-child(12) { top: 50%; left: 18%; transform: translateY(-50%); }
+.rectangle-container button:nth-child(13) { top: 50%; right: 18%; transform: translateY(-50%); }
+.rectangle-container button:nth-child(14) { bottom: 19%; left: 19%; }
+.rectangle-container button:nth-child(15) { bottom: 18%; left: 50%; transform: translateX(-50%); }
+.rectangle-container button:nth-child(16) { bottom: 19%; right: 19%; }
+
+/* Inner Rectangle */
+.rectangle-container button:nth-child(17) { top: 34%; left: 34%; }
+.rectangle-container button:nth-child(18) { top: 34%; left: 50%; transform: translateX(-50%); }
+.rectangle-container button:nth-child(19) { top: 34%; right: 34%; }
+.rectangle-container button:nth-child(20) { top: 50%; left: 34%; transform: translateY(-50%); }
+.rectangle-container button:nth-child(21) { top: 50%; right: 34%; transform: translateY(-50%); }
+.rectangle-container button:nth-child(22) { bottom: 34%; left: 34%; }
+.rectangle-container button:nth-child(23) { bottom: 34%; left: 50%; transform: translateX(-50%); }
+.rectangle-container button:nth-child(24) { bottom: 34%; right: 34%; }
+
+/* SVG for the 3 rectangles */
+.rectangle-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .chessboard-background {
+    background-image: url('g.jpp'); /* Ensuring the same image is used */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #333; /* A fallback color in case the image fails */
+  }
+
+  .rectangle-button {
+    background-color: #444; /* Dark background for buttons */
+    color: #ddd; /* Lighter text color for better contrast */
+  }
+
+  .white-button {
+    background-color: #eee; /* Ensure white button still appears white */
+    color: black;
+  }
+
+  .rectangle-lines {
+    stroke: white; /* White lines for better visibility */
+  }
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+  .chessboard-background {
+    background-image: url('ff.jpg'); /* Ensuring the same image is used */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0; /* A fallback color for light mode */
+  }
+
+  .rectangle-button {
+    background-color: white; /* Light background for buttons */
+    color: black; /* Darker text color for better contrast */
+  }
+
+  .white-button {
+    background-color: white;
+    color: red;
+  }
+
+  .rectangle-lines {
+    stroke: black; /* Black lines for better visibility */
+  }
+}
+
+
+
+/* Time Box */
+.timer-box {
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid black; /* Solid black border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    position: fixed; /* Keeps the box in the same position even during scrolling */
+    top: 73px;  /* Distance from the top */
+    left: 20px; /* Distance from the right side */
+    z-index: 1000; /* Ensures the box stays on top of other elements */
+  }
+  
+  .time-display {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for digital look */
+    font-size: 1rem; /* Font size */
+    color: black; /* Dark text color */
+  }
+  
+  
+/* Default styles for mobile (compact version) */
+.player-info-box, .player-info-box2 {
+    position: fixed;
+    background-color: floralwhite;
+    border: 2px solid black;
+    padding: 1px; /* Minimal padding */
+    width: 80px; /* Compact width for mobile */
+    top: 75px;
+    right: 40px; /* Changed from left to right for right-top positioning */
+    font-size: 8px; /* Compact font size for mobile */
+  }
+  
+  .player-info-box2 {
+    right: 140px; /* Adjusted right position for Player 2 on mobile */
+  }
+  
+  .player-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+  }
+  
+  .player-info-item input[type="text"] {
+    width: 40px; /* Compact input field width */
+    font-size: 8px; /* Compact font size for input */
+  }
+  
+  button {
+    padding: 1px 2px; /* Minimal button size for mobile */
+    font-size: 8px; /* Compact font size for buttons */
+  }
+  
+  /* Larger styles for PC (desktop) */
+  @media (min-width: 768px) {
+    .player-info-box, .player-info-box2 {
+      padding: 5px; /* Increased padding for desktop */
+      width: 160px; /* Increased width for desktop */
+      font-size: 14px; /* Larger font size for desktop */
+      right: 40px; /* Keep right aligned for desktop */
+      top: 560px;
+      right: 630px;
+    }
+  
+    .player-info-box2 {
+      right: 630px; /* Adjusted right position for Player 2 on desktop */
+      top: 108px;
+    }
+  
+    .player-info-item input[type="text"] {
+      width: 100px; /* Wider input fields for desktop */
+      font-size: 14px; /* Larger font size for input */
+    }
+  
+    button {
+      padding: 5px 10px; /* Increased button size for desktop */
+      font-size: 14px; /* Larger font size for buttons */
+    }
+  }
+  
+
+  .App {
+    display: flex;
+  }
+  
+  .side-header {
+    width: 250px;
+    background-color: #2e3b55;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: fixed;
+    height: 100vh;
+  }
+  
+  .logo img {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .side-header button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #4a5d7d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .sub-options button {
+    margin: 5px 20px;
+    width: calc(100% - 40px);
+  }
+  
+  .auth-buttons {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .play-options {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .play-options button {
+    background-color: #6c5ce7;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: #576b95;
+  }
+  
+  

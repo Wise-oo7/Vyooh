@@ -1,0 +1,41 @@
+.signup-container {
+    width: 250px; /* Reduced width */
+    margin: 10px; /* Added margin for spacing */
+    padding: 10px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixed position to stay in place on scroll */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+}
+
+.signup-container h2 {
+    text-align: center;
+    font-size: 1rem; /* Smaller font size for title */
+    margin-bottom: 10px; /* Slightly reduced margin */
+}
+
+.signup-container input {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    margin: 5px 0; /* Reduced margin */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Smaller font size for input */
+}
+
+.signup-container button {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Smaller font size for button */
+}
+
+.signup-container button:hover {
+    background-color: #0056b3;
+}

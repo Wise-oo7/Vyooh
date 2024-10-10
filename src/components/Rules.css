@@ -1,0 +1,91 @@
+/* Button Styles */
+.note-button {
+    position: fixed; /* Positioning at the top */
+    top: 75px; /* Space from the top */
+    left: 110px; /* Space from the left */
+    padding: 5px 8px;
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 4px;
+    z-index: 1000; /* Make sure it's on top of other elements */
+  }
+  
+  .note-button:hover {
+    background-color: brown;
+  }
+/* Main Rules Container Styles */
+.rules-container {
+  position: fixed;
+  top: 107px;
+  left: 110px;
+  background-color: #f7f7f7; /* Softer background */
+  border: 1px solid #2c3e50; /* Darker, more professional border */
+  padding: 20px; /* Increased padding for space */
+  width: 290px; /* Slightly wider for readability */
+  max-height: 480px; /* Adjusted max height */
+  overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sleek font */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Add hover effect for the container */
+.rules-container:hover {
+  transform: translateY(-10px); /* Elevate on hover */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3); /* Add depth */
+}
+
+/* Header Styles */
+.rules-container h2 {
+  margin-bottom: 15px;
+  color: #34495e; /* Deep blue header */
+  font-size: 1.8em; /* Larger font size */
+  text-align: center;
+  letter-spacing: 1px; /* Spaced out letters for a modern look */
+  border-bottom: 1px solid #ecf0f1; /* Subtle underline effect */
+  padding-bottom: 10px;
+}
+
+/* Paragraph Styles */
+.rules-container p {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ecf0f1; /* Light gray background */
+  border-radius: 8px;
+  color: #2c3e50; /* Text color matches container border */
+  font-size: 1.1em; /* Slightly larger text for readability */
+  line-height: 1.6; /* Comfortable line spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background-color 0.3s ease-in-out; /* Smooth background transition */
+}
+
+/* Add hover effect for paragraphs */
+.rules-container p:hover {
+  background-color: #d5d8dc; /* Slight color change on hover */
+}
+
+/* First Paragraph Specific Styling */
+.rules-container p:first-child {
+  background-color: #3498db; /* Unique background color for the first item */
+  color: white; /* White text */
+  font-weight: bold; /* Bold for emphasis */
+}
+
+/* Subtle scrolling effect */
+.rules-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.rules-container::-webkit-scrollbar-thumb {
+  background-color: #95a5a6; /* Custom scroll thumb */
+  border-radius: 4px;
+}
+
+.rules-container::-webkit-scrollbar-track {
+  background-color: #ecf0f1; /* Scrollbar track color */
+}
