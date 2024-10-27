@@ -1,0 +1,415 @@
+/* General Styling for Support Page */
+/* General styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #1e1e2d; /* Dark background for contrast */
+}
+
+/* Support page container */
+.support-page {
+  padding: 80px 20px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #eee;
+  text-align: center;
+}
+
+/* Title styling for support section */
+.support-page h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+/* Article box styling */
+.article-box {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Query submission section */
+.query-box {
+  background-color: #2e2e3e;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #eee;
+}
+
+/* Query text area styling */
+.query-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #444;
+  resize: vertical;
+  background-color: #333;
+  color: #eee;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.submit-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #005bb5;
+}
+
+/* Message styling for feedback */
+.message {
+  margin-top: 15px;
+  color: #00ff99; /* Success color */
+  font-size: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .support-page {
+    padding: 60px 15px;
+  }
+
+  .support-page h2 {
+    font-size: 1.8em;
+  }
+
+  .article-box,
+  .query-box {
+    font-size: 1em;
+  }
+
+  .submit-button {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+}
+
+
+
+
+
+/* About Page */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #1e1e2d; /* Dark background for contrast */
+}
+
+.about-page {
+  padding: 80px 20px 60px; /* Added more padding for better spacing */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2, h3 {
+  color: yellow;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+.article-box, .video-box, .image-box {
+  margin-bottom: 40px;
+}
+
+/* Image styling */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Video styling */
+.video-box iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 315px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* List styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: rgba(0, 102, 204, 0.8);
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 90px 20px;
+  }
+}
+
+/* Footer styling */
+.footer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6); /* Background for visibility */
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0.8;
+  text-align: right;
+  z-index: 1000;
+}
+
+
+
+
+
+
+/* PrivacyPolicy.css */
+/* General styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #1e1e2d; /* Dark background for contrast */
+}
+
+/* Container for Privacy Policy content */
+.privacy-container {
+  padding: 80px 20px 60px; /* Spacing for top and bottom */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1, h2 {
+  color: yellow;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.privacy-heading {
+  margin-bottom: 30px;
+}
+
+.last-updated {
+  color: #00ff99;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Section styling */
+.policy-section {
+  margin-bottom: 30px;
+  color: skyblue;
+}
+
+/* List styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: rgba(0, 102, 204, 0.8); /* Blue background for contrast */
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 60px 15px; /* Adjust padding for mobile */
+  }
+
+  h1, h2 {
+    font-size: 1.5em; /* Smaller font size on small screens */
+  }
+
+  li {
+    padding: 8px; /* Adjust padding in list items for smaller screens */
+  }
+}
+
+/* Footer styling */
+.footer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.6); /* Background for readability */
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0.8;
+  text-align: right;
+  z-index: 1000;
+}
+
+  
+
+
+
+
+  /* UserAgreement.css */
+ /* General styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #1e1e2d; /* Dark background for contrast */
+}
+
+/* Container for User Agreement content */
+.agreement-container {
+  padding: 80px 20px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #eee;
+}
+
+/* Headings */
+.agreement-heading {
+  color: yellow;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+/* Content styling */
+.agreement-content {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .agreement-container {
+    padding: 60px 15px;
+  }
+
+  .agreement-heading {
+    font-size: 1.8em;
+  }
+
+  .agreement-content {
+    font-size: 1em;
+  }
+}
+
+  
+
+
+
+
+  /* Partners.css */
+/* General styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #1e1e2d; /* Dark background for contrast */
+}
+
+/* Container for Partners content */
+.partners-container {
+  padding: 80px 20px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #eee;
+  text-align: center;
+}
+
+/* Title styling */
+.partners-title {
+  color: yellow;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+/* Message styling */
+.partners-message {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Button styling */
+.partners-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.partners-button:hover {
+  background-color: #005bb5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .partners-container {
+    padding: 60px 15px;
+  }
+
+  .partners-title {
+    font-size: 1.8em;
+  }
+
+  .partners-message {
+    font-size: 1em;
+  }
+
+  .partners-button {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+}

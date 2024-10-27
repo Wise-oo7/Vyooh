@@ -8,15 +8,42 @@
   height: 100%;
   position: relative;
 }
+
+/* Remove Button  */
+.remove-button {
+  position: absolute;
+  padding: 4px 4px;
+  font-size: 10px;
+  color: #ffffff;
+  background-color: #d9534f;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  transform: translate(-103%, -180%); /* Centers exactly over the clicked button */
+  z-index: 1000;
+}
+
+.remove-button::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 70%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 15px;
+  background-color: #d9534f;
+}
+
 /* Main container for the rectangles */
 .rectangle-container {
   position: relative;
-  top: 40px;
+  top: 5px;
   left: 20px;
   width: 90vw;
-  max-width: 700px;
-  height: 90vw;
-  max-height: 600px;
+  max-width: 650px;
+  height: 90vw;  
+  max-height: 520px;
   margin: 50px auto;
   display: flex;
   justify-content: center;
@@ -40,24 +67,25 @@
 /* Button styles */
 .rectangle-button {
   position: absolute;
-  width: 10px;
-  height: 22px;
+  width: 15px;
+  height: 28px;
   background-color: white;
   border: 1px solid black;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   color: red;
   cursor: pointer;
   z-index: 1;
-  border-radius: 0;
+  border-radius: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.1s;
 }
 
-.white-button {
-  background-color: white;
-  border: 3px solid red;
+.selected {
+  transform: scale(1.1); /* Slightly enlarge the selected button */
+  border: 2px solid blue; /* Blue border to show it’s selected */
 }
 
 /* Button positions for the 3 rectangles */
@@ -101,6 +129,23 @@
   z-index: 0;
 }
 
+.piece-symbol {
+  font-size: 1px; /* Larger font size for the symbol */
+  font-weight: bold;
+  color: black;
+  display: block;
+}
+
+.piece-name {
+  font-size: 7px; /* Smaller font size for the name */
+  color: black;
+  margin-top: 2px; /* Space between symbol and name */
+  line-height: 1;
+  text-align: center; /* Center the text below the symbol */
+}
+
+
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .chessboard-background {
@@ -129,7 +174,7 @@
 /* Light mode styles */
 @media (prefers-color-scheme: light) {
   .chessboard-background {
-    background-image: url('ff.jpg'); /* Ensuring the same image is used */
+    background-image: url('BACK32.PNG'); /* Ensuring the same image is used */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -151,59 +196,6 @@
   }
 }
 
-
-
-/* Time Box */
-.timer-box {
-    width: 80px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0; /* Light gray background */
-    border: 1px solid black; /* Solid black border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
-    position: fixed; /* Keeps the box in the same position even during scrolling */
-    top: 73px;  /* Distance from the top */
-    left: 20px; /* Distance from the right side */
-    z-index: 1000; /* Ensures the box stays on top of other elements */
-  }
-  
-  .time-display {
-    font-family: 'Courier New', Courier, monospace; /* Monospace font for digital look */
-    font-size: 1rem; /* Font size */
-    color: black; /* Dark text color */
-  }
-  
-  
-/* Default styles for mobile (compact version) */
-.player-info-box, .player-info-box2 {
-    position: fixed;
-    background-color: floralwhite;
-    border: 2px solid black;
-    padding: 1px; /* Minimal padding */
-    width: 80px; /* Compact width for mobile */
-    top: 75px;
-    right: 40px; /* Changed from left to right for right-top positioning */
-    font-size: 8px; /* Compact font size for mobile */
-  }
-  
-  .player-info-box2 {
-    right: 140px; /* Adjusted right position for Player 2 on mobile */
-  }
-  
-  .player-info-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1px;
-  }
-  
-  .player-info-item input[type="text"] {
-    width: 40px; /* Compact input field width */
-    font-size: 8px; /* Compact font size for input */
-  }
   
   button {
     padding: 1px 2px; /* Minimal button size for mobile */
@@ -217,13 +209,13 @@
       width: 160px; /* Increased width for desktop */
       font-size: 14px; /* Larger font size for desktop */
       right: 40px; /* Keep right aligned for desktop */
-      top: 560px;
+      top: 533px;
       right: 630px;
     }
   
     .player-info-box2 {
       right: 630px; /* Adjusted right position for Player 2 on desktop */
-      top: 108px;
+      top: 128px;
     }
   
     .player-info-item input[type="text"] {
@@ -237,7 +229,6 @@
     }
   }
   
-
   .App {
     display: flex;
   }
@@ -300,3 +291,262 @@
   }
   
   
+/* Point table for Panduv and Kauruv */
+.counter-buttons {
+  position: absolute;
+  top: -7%;
+  left: 20%;
+  display: flex;
+  flex-direction: row;
+  gap: 195px; /* Space between buttons */
+}
+
+.king-count-button{
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9534f; /* Customize your button color */
+    color: white;
+}
+.queen-count-button {
+  padding: 8px 12px;
+  font-size: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background-color: cadetblue; /* Customize your button color */
+  color: white;
+} 
+
+@media (max-width: 768px) { /* For tablets and below */
+  .counter-buttons {
+    top: -18%;
+    left: 12%;
+  }
+
+  .king-count-button,
+  .queen-count-button {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) { /* For mobile devices */
+  .counter-buttons {
+    top: -18%;
+    left: 10%;
+  }
+
+  .king-count-button,
+  .queen-count-button {
+    font-size: 0.8rem;
+    padding: 5px 5px;
+  }
+}
+
+
+/* Winner Box */
+.winner-box {
+  border: 5px solid yellow;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+  position: absolute;
+  margin: 20px auto;
+  max-width: 80%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  animation: balloon-animation 5s infinite, pulse-border 2s infinite ease-in-out;
+  z-index: 9999; /* Ensures it's on top of other elements */
+}
+
+/* Balloon-like floating effect */
+@keyframes balloon-animation {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Pulse effect around the border for extra visibility */
+@keyframes pulse-border {
+  0% { box-shadow: 0px 0px 15px 5px yellow; }
+  50% { box-shadow: 0px 0px 30px 10px yellow; }
+  100% { box-shadow: 0px 0px 15px 5px yellow; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .winner-box {
+    font-size: 18px;
+    padding: 15px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .winner-box {
+    font-size: 16px;
+    padding: 10px;
+    max-width: 95%;
+  }
+}
+
+.learn-page {
+  background-color: #0a0a0a; /* Darker black for a more sleek look */
+  color: #f4f4f4; /* Softer white for readability */
+  padding: 60px 20px;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.learn-heading {
+  font-size: 3.5em;
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+  color: #00ffff; /* Bright color for emphasis */
+  letter-spacing: 1.5px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.article-section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 25px;
+  color: #ff6347; /* Use tomato for headings */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.article-box {
+  background: linear-gradient(135deg, #1c1c1c 0%, #333333 100%);
+  border: 2px solid #5d5dfc;
+  border-radius: 15px;
+  padding: 30px;
+  width: 95%;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.article-text {
+  font-size: 1.3em;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-family: 'Open Sans', sans-serif;
+  color: #f4f4f4;
+}
+
+.rules-heading {
+  font-size: 2em;
+  margin: 30px 0;
+  color: #ff6347;
+  text-transform: uppercase;
+}
+
+.rules-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rule-item {
+  background: #202020;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #1e90ff;
+  font-size: 1.2em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.closing {
+  margin-top: 25px;
+  font-style: italic;
+  color: #ccc;
+  font-size: 1.1em;
+}
+
+.video-section {
+  margin-bottom: 50px;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.video-wrapper iframe {
+  border: 4px solid #1e90ff;
+  border-radius: 12px;
+  width: 85%;
+  max-width: 850px;
+  height: 500px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .learn-heading {
+    font-size: 3em;
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+
+  .article-text, .video-wrapper iframe {
+    width: 90%;
+  }
+
+  .video-wrapper iframe {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .learn-heading {
+    font-size: 2.5em;
+  }
+
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .article-text {
+    font-size: 1.2em;
+    width: 95%;
+  }
+
+  .rules-box {
+    gap: 10px;
+  }
+
+  .video-wrapper iframe {
+    width: 95%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .learn-heading {
+    font-size: 2.2em;
+  }
+
+  .section-title {
+    font-size: 1.6em;
+  }
+
+  .article-text {
+    font-size: 1em;
+  }
+
+  .video-wrapper iframe {
+    width: 100%;
+    height: 300px;
+  }
+}

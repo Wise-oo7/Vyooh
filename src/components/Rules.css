@@ -1,15 +1,15 @@
 /* Button Styles */
 .note-button {
     position: fixed; /* Positioning at the top */
-    top: 75px; /* Space from the top */
-    left: 110px; /* Space from the left */
+    top: 80px; /* Space from the top */
+    left: 50px; /* Space from the left */
     padding: 5px 8px;
     background-color: black;
     color: whitesmoke;
     border: none;
     cursor: pointer;
-    font-size: 15px;
-    border-radius: 4px;
+    font-size: 10px;
+    border-radius: 20px;
     z-index: 1000; /* Make sure it's on top of other elements */
   }
   
@@ -19,11 +19,11 @@
 /* Main Rules Container Styles */
 .rules-container {
   position: fixed;
-  top: 107px;
-  left: 110px;
+  top: 105px;
+  left: 80px;
   background-color: #f7f7f7; /* Softer background */
   border: 1px solid #2c3e50; /* Darker, more professional border */
-  padding: 20px; /* Increased padding for space */
+  padding: 1px; /* Increased padding for space */
   width: 290px; /* Slightly wider for readability */
   max-height: 480px; /* Adjusted max height */
   overflow-y: auto;
@@ -31,7 +31,7 @@
   z-index: 1000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sleek font */
   border-radius: 10px; /* Rounded corners */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Smooth transition */
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease; /* Smooth transition */
 }
 
 /* Add hover effect for the container */
