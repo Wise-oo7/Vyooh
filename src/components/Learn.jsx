@@ -8,18 +8,18 @@ const Learn = () => {
 
       {/* Article Section */}
       <div className="article-section">
-        <h2 className="section-title">Understanding Vyuha</h2>
+        <h2 className="section-title">Understanding Vyuh</h2>
         <div className="article-box">
           <p className="article-text">
-            Vyuha is an exciting game that combines strategy, planning, intelligence & photographic memory of brain.
+            Vyuh is an exciting game that combines strategy, planning, intelligence & photographic memory of brain.
             In this article, we will explore the origins of the game, its rules, and how you can master it.
-            Vyuha is easy to learn but requires skill to master. Whether you are a beginner or an expert,
+            Vyuh is easy to learn but requires skill to master. Whether you are a beginner or an expert,
             this game is perfect for everyone.
           </p>
           <p className="article-text">
-            Vyuha is a game based on the ancient concept of Chakravyuha (चक्रव्यूह), offering an exciting mix of strategy and planning.
-            It is considered a test of intelligence, but despite its complexity, Vyuha is easy to learn and can be enjoyed by players 
-            of all skill levels. The game is played on a 3x3 square board with 24 positions and 18 dice. The main goal of Vyuha is
+            Vyuh is a game based on the ancient concept of Chakravyuha (चक्रव्यूह), offering an exciting mix of strategy and planning.
+            It is considered a test of intelligence, but despite its complexity, Vyuh is easy to learn and can be enjoyed by players 
+            of all skill levels. The game is played on a 3x3 square board with 24 positions and 18 dice. The main goal of Vyuh is
             to form "tricks." Once a player forms a trick, they take one of their opponent's dice. The first player to collect 9 dices wins,
             and the game ends.
           </p>

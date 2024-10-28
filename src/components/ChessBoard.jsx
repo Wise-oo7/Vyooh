@@ -56,11 +56,13 @@ const ChessBoard = () => {
     }
     return () => clearInterval(interval);
   }, [isKingTurn, kingCount, queenCount]);
+
   const handleClick = (index) => {
+    const audio = new Audio('/gt.mp3');
     setButtons((prevButtons) => {
       const newButtons = [...prevButtons];
       const current = newButtons[index];
-
+      
       if (selectedIndex === index) {
         setSelectedIndex(null);
       } else if (current.symbol !== null && selectedIndex === null) {
@@ -76,32 +78,23 @@ const ChessBoard = () => {
           setIsKingTurn(newButtons[index].symbol === "P");
         }
       } else if (kingCount < 9 - kingRemovals && isKingTurn) {
-        // Get the next Pandav name that hasn't been removed
         const availablePandavNames = pandavNames.filter(name => !removedPandavNames.includes(name));
-        newButtons[index] = {
-          symbol: "P",
-          color: "tomato",
-          name: availablePandavNames[kingCount]
-        };
+        newButtons[index] = { symbol: "P", color: "tomato", name: availablePandavNames[kingCount] };
         setKingCount(kingCount + 1);
         setIsKingTurn(false);
+        audio.play(); // Play sound for King
       } else if (queenCount < 9 - queenRemovals && !isKingTurn) {
-        // Get the next Kaurav name that hasn't been removed
         const availableKauravNames = kauravNames.filter(name => !removedKauravNames.includes(name));
-        newButtons[index] = {
-          symbol: "K",
-          color: "steelblue",
-          name: availableKauravNames[queenCount]
-        };
+        newButtons[index] = { symbol: "K", color: "steelblue", name: availableKauravNames[queenCount] };
         setQueenCount(queenCount + 1);
         setIsKingTurn(true);
+        audio.play(); // Play sound for Queen
       }
-      
-
       setShowRemoveButton(false);
       return newButtons;
     });
   };
+  
 
 
 const handleContextMenu = (event, index) => {
@@ -235,17 +228,17 @@ const handleRemove = () => {
       </div>
 
       <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <rect x="5" y="5" width="90" height="90" fill="none" stroke="blue" strokeWidth="0.2" />
-        <rect x="20" y="20" width="60" height="60" fill="none" stroke="blue" strokeWidth="0.2" />
-        <rect x="35" y="35" width="30" height="30" fill="none" stroke="blue" strokeWidth="0.2" />
-        <line x1="50%" y1="5%" x2="50%" y2="20%" stroke="blue" strokeWidth="0.2" />
-        <line x1="50%" y1="20%" x2="50%" y2="35%" stroke="blue" strokeWidth="0.3" />
-        <line x1="5%" y1="50%" x2="20%" y2="50%" stroke="blue" strokeWidth="0.2" />
-        <line x1="20%" y1="50%" x2="35%" y2="50%" stroke="blue" strokeWidth="0.3" />
-        <line x1="95%" y1="50%" x2="80%" y2="50%" stroke="blue" strokeWidth="0.2" />
-        <line x1="80%" y1="50%" x2="65%" y2="50%" stroke="blue" strokeWidth="0.3" />
-        <line x1="50%" y1="95%" x2="50%" y2="80%" stroke="blue" strokeWidth="0.2" />
-        <line x1="50%" y1="80%" x2="50%" y2="65%" stroke="blue" strokeWidth="0.3" />
+        <rect x="5" y="5" width="90" height="90" fill="none" stroke="yellow" strokeWidth="0.9" />
+        <rect x="20" y="20" width="60" height="60" fill="none" stroke="green" strokeWidth="0.4" />
+        <rect x="35" y="35" width="30" height="30" fill="none" stroke="red" strokeWidth="0.4" />
+        <line x1="50%" y1="5%" x2="50%" y2="20%" stroke="blue" strokeWidth="0.4" />
+        <line x1="50%" y1="20%" x2="50%" y2="35%" stroke="blue" strokeWidth="0.4" />
+        <line x1="5%" y1="50%" x2="20%" y2="50%" stroke="blue" strokeWidth="0.4" />
+        <line x1="20%" y1="50%" x2="35%" y2="50%" stroke="blue" strokeWidth="0.4" />
+        <line x1="95%" y1="50%" x2="80%" y2="50%" stroke="blue" strokeWidth="0.4" />
+        <line x1="80%" y1="50%" x2="65%" y2="50%" stroke="blue" strokeWidth="0.4" />
+        <line x1="50%" y1="95%" x2="50%" y2="80%" stroke="blue" strokeWidth="0.4" />
+        <line x1="50%" y1="80%" x2="50%" y2="65%" stroke="blue" strokeWidth="0.4" />
       </svg>
     </div>
   );

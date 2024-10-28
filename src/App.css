@@ -12,10 +12,10 @@
 /* Remove Button  */
 .remove-button {
   position: absolute;
-  padding: 4px 4px;
-  font-size: 10px;
+  padding: 5px 5px;
+  font-size: 12px;
   color: #ffffff;
-  background-color: #d9534f;
+  background-color: red;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -28,9 +28,9 @@
   content: "";
   position: absolute;
   bottom: -5px;
-  left: 70%;
+  left: 98%;
   transform: translateX(-50%);
-  width: 1px;
+  width: 2px;
   height: 15px;
   background-color: #d9534f;
 }
@@ -67,11 +67,11 @@
 /* Button styles */
 .rectangle-button {
   position: absolute;
-  width: 15px;
-  height: 28px;
+  width: 20px;
+  height: 30px;
   background-color: white;
   border: 1px solid black;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   color: red;
   cursor: pointer;

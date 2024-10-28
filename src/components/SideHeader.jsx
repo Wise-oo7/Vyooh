@@ -100,7 +100,7 @@ const SideHeader = ({
 
       {showMenu && (
         <>
-          <div className="vyuh-logo">Vyuha</div>
+          <div className="vyuh-logo">Vyuh</div>
 
           <div className="menu-options">
             <div
@@ -120,11 +120,11 @@ const SideHeader = ({
             <div className="menu-item" onClick={handleLearnClick}>
               <span className="menu-icon">📘</span> Game Tutorial
             </div>
-            <div className="menu-item" onClick={handleSupportClick}>
-              <span className="menu-icon">📰</span> Support
+            <div className="menu-item" onClick={handlePartnersClick}>
+              <span className="menu-icon">💰</span>Join as Investor
             </div>
             <div className="menu-item" onClick={handleAboutClick}>
-              <span className="menu-icon">ℹ️</span> About
+              <span className="menu-icon">ℹ️</span> About Vyuh
             </div>
           </div>
         </>
@@ -214,13 +214,13 @@ const SideHeader = ({
           </>
         )}
 
-        {currentContent === 'play' && <div>P</div>}
-        {currentContent === 'learn' && <div>L</div>}
-        {currentContent === 'support' && <div>S</div>}
-        {currentContent === 'about' && <div>A</div>}
+        {currentContent === 'play' && <div></div>}
+        {currentContent === 'learn' && <div></div>}
+        {currentContent === 'support' && <div></div>}
+        {currentContent === 'about' && <div></div>}
         {currentContent === 'userAgreement' && <div>U</div>}
         {currentContent === 'privacyPolicy' && <div>P</div>}
-        {currentContent === 'partners' && <div>P</div>}
+        {currentContent === 'partners' && <div></div>}
       </div>
 
       {/* Privacy Policy Modal */}
@@ -239,17 +239,14 @@ const SideHeader = ({
       {/* Footer Section */}
       <footer className="footer">
         <div className="footer-text">
-          <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>Support ☎</a> |  
-          <a href="#" onClick={(e) => { e.preventDefault(); handleAboutClick(); }}>About🔎</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>User Agreement🤝</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>Privacy Policy🔐</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handlePartnersClick(); }}>Join as Investor💰</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>📥Support</a> |  
+          
+          <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>📜User Agreement</a> |
+          <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>🔐Privacy Policy</a>
         </div>
 
         <div className="footer-icons">
-          <a href="https://www" target="_blank" rel="noopener noreferrer">Apple</a>
-          <a href="https://www" target="_blank" rel="noopener noreferrer">Android</a>
-          <a href="https://www" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://www" target="_blank" rel="noopener noreferrer">X</a>
           <a href="https://www.youtube.com/@Vyuha-m1t" target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://www.discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
