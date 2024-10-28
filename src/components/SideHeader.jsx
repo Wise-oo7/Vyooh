@@ -250,7 +250,7 @@ const SideHeader = ({
           <a href="https://www" target="_blank" rel="noopener noreferrer">Apple</a>
           <a href="https://www" target="_blank" rel="noopener noreferrer">Android</a>
           <a href="https://www" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://www" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.youtube.com/@Vyuha-m1t" target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://www.discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
         </div>
