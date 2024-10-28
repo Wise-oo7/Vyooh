@@ -136,15 +136,15 @@ const SideHeader = ({
         {currentContent === null && (
           <>
             <img
-              src="D.PNG"
+              src="D.webp"
               alt="Custom Content"
               style={{
                 position: 'absolute',
-                top: '100px',
+                top: '110px',
                 left: '50px',
                 right: '50px',
                 width: '370px',
-                height: '350px',
+                height: '320px',
               }}
             />
 
@@ -216,11 +216,11 @@ const SideHeader = ({
 
         {currentContent === 'play' && <div>P</div>}
         {currentContent === 'learn' && <div>L</div>}
-        {currentContent === 'support' && <div>Support Content</div>}
-        {currentContent === 'about' && <div>About Content</div>}
-        {currentContent === 'userAgreement' && <div>User Agreement Content</div>}
-        {currentContent === 'privacyPolicy' && <div>Privacy Policy Content</div>}
-        {currentContent === 'partners' && <div>Partners Content</div>}
+        {currentContent === 'support' && <div>S</div>}
+        {currentContent === 'about' && <div>A</div>}
+        {currentContent === 'userAgreement' && <div>U</div>}
+        {currentContent === 'privacyPolicy' && <div>P</div>}
+        {currentContent === 'partners' && <div>P</div>}
       </div>
 
       {/* Privacy Policy Modal */}
@@ -239,11 +239,11 @@ const SideHeader = ({
       {/* Footer Section */}
       <footer className="footer">
         <div className="footer-text">
-          <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>Support</a> |  
-          <a href="#" onClick={(e) => { e.preventDefault(); handleAboutClick(); }}>About</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>User Agreement</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>Privacy Policy</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handlePartnersClick(); }}>Join as Investor</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>Support ☎</a> |  
+          <a href="#" onClick={(e) => { e.preventDefault(); handleAboutClick(); }}>About🔎</a> |
+          <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>User Agreement🤝</a> |
+          <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>Privacy Policy🔐</a> |
+          <a href="#" onClick={(e) => { e.preventDefault(); handlePartnersClick(); }}>Join as Investor💰</a>
         </div>
 
         <div className="footer-icons">

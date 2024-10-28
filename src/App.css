@@ -174,7 +174,7 @@
 /* Light mode styles */
 @media (prefers-color-scheme: light) {
   .chessboard-background {
-    background-image: url('BACK32.PNG'); /* Ensuring the same image is used */
+    background-image: url('kk.jpg'); /* Ensuring the same image is used */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -67,7 +67,7 @@ const Support = () => {
         <h3>Submit Your Query</h3>
         <form onSubmit={sendQuery}>
           <textarea
-            placeholder="Write your query (up to 100 words)"
+            placeholder="Write your query (up to 100 words) & include your mobile number for faster support."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             maxLength="600"
