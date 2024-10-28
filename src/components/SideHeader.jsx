@@ -256,7 +256,7 @@ const SideHeader = ({
         </div>
 
         <div className="footer-copyright">
-        Vyuha.in © 2024
+           thevyuh.com © 2024
         </div>
       </footer>
     </div>
