@@ -8,7 +8,7 @@ const About = () => {
 
       <div className="image-box">
         <img 
-          src="g.jpg" // Replace with your actual image URL
+          src="cx.webp" // Replace with your actual image URL
           alt="About Us"
           className="responsive-image"
         />

@@ -163,10 +163,10 @@ li {
 
 /* Image Styling */
 .responsive-image {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   display: block;
-  margin: 20px auto; /* Add space around image */
+  margin: 10px auto; /* Add space around image */
   border-radius: 12px;
 }
 
