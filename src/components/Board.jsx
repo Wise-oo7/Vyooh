@@ -28,8 +28,10 @@ import "../App.css";
   const kauravNames = ["भीष्म", "द्रोणाचार्य", "कर्ण", "अश्वत्थामा", "कृपाचार्य", "कृतवर्मा", "दुर्योधन", "दुशासन", "युयुत्सु"];
 
 
-  //const pandavNames = ["युधिष्ठिर", "अर्जुन", "भीम", "नकुल", "सहदेव", "अभिमन्यु", "धृष्टद्युम्न", "सत्यकी", "घटोत्कच"];
-  //const kauravNames = ["भीष्म", "द्रोणाचार्य", "कर्ण", "अश्वत्थामा", "कृपाचार्य", "कृतवर्मा", "दुर्योधन", "दुशासन", "युयुत्सु"];
+  //const pandavNames = ["INDIA", "RUSSIA", "CHINA", "SOUTH KOREA", "JAPAN", "SAUDI ARABIA", "NEPAL", "INDONE SIA", "IRAN"];
+     
+  //const kauravNames = ["UNITED STATES", "CANADA", "FRANCE", "UNITED KING DOM", "GER MANY", "ITALY", "TURKEY", "SPAIN", "POLAND"];
+
 
 
   const movementRules = {
