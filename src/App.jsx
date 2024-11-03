@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import SideHeader from './components/SideHeader';
-import ChessBoard from './components/ChessBoard';
+import Board from './components/Board';
 import Learn from './components/Learn';
 import Support from './components/Support'; // Import Support page
 import About from './components/About';
@@ -63,7 +63,7 @@ function App() {
       {/* Conditionally render the pages based on currentPage value */}
       {currentPage === 'play' && (
         <div className="play-container">
-          <ChessBoard />
+          <Board />
         </div>
       )}
 

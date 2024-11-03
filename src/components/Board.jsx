@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 
-const ChessBoard = () => {
+  const Board = () => {
   const totalButtons = 24;
   const [buttons, setButtons] = useState(Array(totalButtons).fill({ symbol: null, color: "white", name: null }));
   const [kingCount, setKingCount] = useState(0);
@@ -26,6 +26,11 @@ const ChessBoard = () => {
 
   const pandavNames = ["युधिष्ठिर", "अर्जुन", "भीम", "नकुल", "सहदेव", "अभिमन्यु", "धृष्टद्युम्न", "सत्यकी", "घटोत्कच"];
   const kauravNames = ["भीष्म", "द्रोणाचार्य", "कर्ण", "अश्वत्थामा", "कृपाचार्य", "कृतवर्मा", "दुर्योधन", "दुशासन", "युयुत्सु"];
+
+
+  //const pandavNames = ["युधिष्ठिर", "अर्जुन", "भीम", "नकुल", "सहदेव", "अभिमन्यु", "धृष्टद्युम्न", "सत्यकी", "घटोत्कच"];
+  //const kauravNames = ["भीष्म", "द्रोणाचार्य", "कर्ण", "अश्वत्थामा", "कृपाचार्य", "कृतवर्मा", "दुर्योधन", "दुशासन", "युयुत्सु"];
+
 
   const movementRules = {
     0: [1, 3], 1: [0, 2, 9], 2: [1, 4], 3: [0, 11, 5], 4: [2, 7, 12],
@@ -79,13 +84,13 @@ const ChessBoard = () => {
         }
       } else if (kingCount < 9 - kingRemovals && isKingTurn) {
         const availablePandavNames = pandavNames.filter(name => !removedPandavNames.includes(name));
-        newButtons[index] = { symbol: "P", color: "tomato", name: availablePandavNames[kingCount] };
+        newButtons[index] = { symbol: "P", color: "sandybrown", name: availablePandavNames[kingCount] };
         setKingCount(kingCount + 1);
         setIsKingTurn(false);
         audio.play(); // Play sound for King
       } else if (queenCount < 9 - queenRemovals && !isKingTurn) {
         const availableKauravNames = kauravNames.filter(name => !removedKauravNames.includes(name));
-        newButtons[index] = { symbol: "K", color: "steelblue", name: availableKauravNames[queenCount] };
+        newButtons[index] = { symbol: "K", color: "skyblue", name: availableKauravNames[queenCount] };
         setQueenCount(queenCount + 1);
         setIsKingTurn(true);
         audio.play(); // Play sound for Queen
@@ -189,7 +194,7 @@ const handleRemove = () => {
   }, [winner]);
 
   return (
-    <div className="rectangle-container chessboard-background">
+    <div className="rectangle-container Board-background">
       {buttons.map((btn, index) => (
         <button
          key={index}
@@ -228,9 +233,9 @@ const handleRemove = () => {
       </div>
 
       <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <rect x="5" y="5" width="90" height="90" fill="none" stroke="yellow" strokeWidth="0.9" />
-        <rect x="20" y="20" width="60" height="60" fill="none" stroke="green" strokeWidth="0.4" />
-        <rect x="35" y="35" width="30" height="30" fill="none" stroke="red" strokeWidth="0.4" />
+        <rect x="5" y="5" width="90" height="90" fill="none" stroke="red" strokeWidth="0.4"/>
+        <rect x="20" y="20" width="60" height="60" fill="none" stroke="blue" strokeWidth="0.4"/>
+        <rect x="35" y="35" width="30" height="30" fill="none" stroke="orange" strokeWidth="0.4"/>
         <line x1="50%" y1="5%" x2="50%" y2="20%" stroke="blue" strokeWidth="0.4" />
         <line x1="50%" y1="20%" x2="50%" y2="35%" stroke="blue" strokeWidth="0.4" />
         <line x1="5%" y1="50%" x2="20%" y2="50%" stroke="blue" strokeWidth="0.4" />
@@ -244,7 +249,5 @@ const handleRemove = () => {
   );
 };
 
-export default ChessBoard;
-
-
+export default Board;
 

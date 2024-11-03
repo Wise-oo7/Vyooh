@@ -1,5 +1,5 @@
-/* General background for the chessboard */
-.chessboard-background {
+/* General background for the Board */
+.Board-background {
   background-image: url('/g.jpg'); /* Replace with the correct path if the image is in the public folder */
   background-size: cover;
   background-position: center;
@@ -148,7 +148,7 @@
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-  .chessboard-background {
+  .Board-background {
     background-image: url('g.jpp'); /* Ensuring the same image is used */
     background-size: cover;
     background-position: center;
@@ -173,8 +173,8 @@
 
 /* Light mode styles */
 @media (prefers-color-scheme: light) {
-  .chessboard-background {
-    background-image: url('kk.jpg'); /* Ensuring the same image is used */
+  .Board-background {
+    background-image: url('hh.PNG'); /* Ensuring the same image is used */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
