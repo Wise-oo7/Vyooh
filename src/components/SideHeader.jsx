@@ -124,7 +124,7 @@ const SideHeader = ({
               <span className="menu-icon">💰</span>Join as Investor
             </div>
             <div className="menu-item" onClick={handleAboutClick}>
-              <span className="menu-icon">ℹ️</span> About Vyuh
+              <span className="menu-icon">ℹ️📙</span> About Vyuh
             </div>
           </div>
         </>

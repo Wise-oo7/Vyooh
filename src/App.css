@@ -550,3 +550,63 @@
     height: 300px;
   }
 }
+
+
+.play-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff; /* White background for contrast */
+  border: 3px solid yellow; /* Bold blue border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 25px;
+  max-width: 80%; /* Ensures responsiveness on smaller devices */
+  width: 450px; /* Base width */
+  margin: 50px auto; /* Centered on the page */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for a pop-out effect */
+  transition: transform 0.1s, box-shadow 0.1s; /* Subtle hover effect */
+}
+
+.play-box:hover {
+  transform: scale(1.01); /* Slightly scales up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.play-button {
+  background-color: #0077b6; /* Primary button color */
+  color: #fff; /* White text */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px; /* Rounded button corners */
+  cursor: pointer;
+  font-size: 18px; /* Larger, more readable font */
+  font-weight: 600; /* Semi-bold text */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.play-button:hover {
+  background-color: #005f8a; /* Darker blue on hover */
+  transform: translateY(-1px); /* Lift effect */
+}
+
+@media (max-width: 768px) {
+  .play-box {
+    padding: 30px; /* Reduced padding for smaller screens */
+    width: 90%; /* Adapt width for mobile */
+  }
+
+  .play-button {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .play-box {
+    padding: 55px; /* Compact padding for very small screens */
+  }
+
+  .play-button {
+    padding: 5px 45px; /* Adjusted button padding */
+  }
+}
