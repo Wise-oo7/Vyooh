@@ -124,7 +124,7 @@ const SideHeader = ({
               <span className="menu-icon">💰</span>Join as Investor
             </div>
             <div className="menu-item" onClick={handleAboutClick}>
-              <span className="menu-icon">ℹ️📙</span> About Vyuh
+              <span className="menu-icon">ℹ️</span> About Vyuh
             </div>
           </div>
         </>
@@ -132,6 +132,8 @@ const SideHeader = ({
 
       {/* Main Content */}
       <div className="main-content">
+
+
         {/* Render image and button only if currentContent is null */}
         {currentContent === null && (
           <>
@@ -140,20 +142,20 @@ const SideHeader = ({
               alt="Custom Content"
               style={{
                 position: 'absolute',
-                top: '110px',
-                left: '50px',
+                top: '70px',
+                left: '10px',
                 right: '50px',
-                width: '370px',
-                height: '320px',
+                width: '355px',
+                height: '310px',
               }}
             />
 
             <button
               style={{
                 position: 'absolute',
-                top: '470px',
-                left: '50px',
-                width: '370px',
+                top: '390px',
+                left: '10px',
+                width: '355px',
                 height: '50px',
                 backgroundColor: '#d9534f',
                 color: '#fff',
@@ -174,10 +176,10 @@ const SideHeader = ({
             <button
               style={{
                 position: 'absolute',
-                top: '530px', // Adjust position below the "Play Now" button
-                left: '65px',
+                top: '450px', // Adjust position below the "Play Now" button
+                left: '14px',
                 width: '340px',
-                height: '50px',
+                height: '40px',
                 backgroundColor: '#5cb85c',
                 color: '#fff',
                 border: 'none',
@@ -197,8 +199,8 @@ const SideHeader = ({
             {comingSoon && (
               <div style={{
                 position: 'absolute',
-                top: '600px', // Adjust position for the message
-                left: '70px',
+                top: '505px', // Adjust position for the message
+                left: '23px',
                 width: '330px',
                 height: '20px',
                 backgroundColor: '#f0ad4e',
@@ -213,6 +215,7 @@ const SideHeader = ({
             )}
           </>
         )}
+        
 
         {currentContent === 'play' && <div></div>}
         {currentContent === 'learn' && <div></div>}
