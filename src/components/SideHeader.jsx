@@ -142,26 +142,27 @@ const SideHeader = ({
               alt="Custom Content"
               style={{
                 position: 'absolute',
-                top: '70px',
+                top: '80px',
                 left: '10px',
                 right: '50px',
-                width: '355px',
-                height: '310px',
+                width: '410px',
+                height: '380px',
+                border: '1px solid yellow'
               }}
             />
 
             <button
               style={{
                 position: 'absolute',
-                top: '390px',
+                top: '490px',
                 left: '10px',
-                width: '355px',
-                height: '50px',
+                width: '410px',
+                height: '60px',
                 backgroundColor: '#d9534f',
                 color: '#fff',
-                border: 'none',
-                borderRadius: '5px',
-                fontSize: '18px',
+                border: '1px solid yellow',
+                borderRadius: '10px',
+                fontSize: '28px',
                 cursor: 'pointer',
                 display: 'flex',
                 justifyContent: 'center',
@@ -176,15 +177,15 @@ const SideHeader = ({
             <button
               style={{
                 position: 'absolute',
-                top: '450px', // Adjust position below the "Play Now" button
-                left: '14px',
-                width: '340px',
-                height: '40px',
+                top: '555px', // Adjust position below the "Play Now" button
+                left: '15px',
+                width: '400px',
+                height: '50px',
                 backgroundColor: '#5cb85c',
                 color: '#fff',
-                border: 'none',
-                borderRadius: '5px',
-                fontSize: '18px',
+                border: '1px solid yellow',
+                borderRadius: '10px',
+                fontSize: '17px',
                 cursor: 'pointer',
                 display: 'flex',
                 justifyContent: 'center',
@@ -199,9 +200,9 @@ const SideHeader = ({
             {comingSoon && (
               <div style={{
                 position: 'absolute',
-                top: '505px', // Adjust position for the message
-                left: '23px',
-                width: '330px',
+                top: '618px', // Adjust position for the message
+                left: '30px',
+                width: '360px',
                 height: '20px',
                 backgroundColor: '#f0ad4e',
                 color: '#fff',
@@ -264,3 +265,4 @@ const SideHeader = ({
 };
 
 export default SideHeader;
+
