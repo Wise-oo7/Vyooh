@@ -14,16 +14,15 @@ const SideHeader = ({
   const [showPlayOptions, setShowPlayOptions] = useState(false);
   const [currentContent, setCurrentContent] = useState(null);
   const [comingSoon, setComingSoon] = useState(false);
-  const [privacyAccepted, setPrivacyAccepted] = useState(false); // New state for privacy acceptance
-  const [showPrivacyModal, setShowPrivacyModal] = useState(false); // Modal state
+  const [privacyAccepted, setPrivacyAccepted] = useState(false); 
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
-  // Handlers to show content
   const handlePlayClick = () => {
-    setCurrentContent('play');
+    setCurrentContent('play'); // Open Play.jsx
     if (onPlayClick) onPlayClick();
   };
 
@@ -57,12 +56,10 @@ const SideHeader = ({
     if (onPartnersClick) onPartnersClick();
   };
 
-  // Function for "Play Online" button click
   const handlePlayOnlineClick = () => {
     setComingSoon(true);
   };
 
-  // Back button functionality to reset to home page
   useEffect(() => {
     const handlePopState = () => {
       setCurrentContent(null);
@@ -74,34 +71,32 @@ const SideHeader = ({
     };
   }, []);
 
-  // Effect to check if privacy policy was accepted
   useEffect(() => {
     const accepted = localStorage.getItem('privacyAccepted');
     if (!accepted) {
-      setShowPrivacyModal(true); // Show the privacy modal
+      setShowPrivacyModal(true);
     } else {
       setPrivacyAccepted(true);
     }
   }, []);
 
-  // Function to handle privacy policy acceptance
   const handleAcceptPrivacyPolicy = () => {
     localStorage.setItem('privacyAccepted', 'true');
     setPrivacyAccepted(true);
-    setShowPrivacyModal(false); // Close the modal
+    setShowPrivacyModal(false);
   };
 
   return (
     <div className={`side-header ${showMenu ? 'expanded' : 'collapsed'}`}>
-      {/* Header Section */}
-      <div className="hamburger-icon" onClick={toggleMenu}>
-        ☰
-      </div>
+      <div className="hamburger-icon" onClick={toggleMenu}></div>
 
       {showMenu && (
         <>
-          <div className="vyuh-logo">Vyuh</div>
-
+          <div className="vyuh-logo">
+            <a href="/">
+              <img src="./h.PNG" alt="Vyuh Logo" className="logo-image" />
+            </a>
+          </div>
           <div className="menu-options">
             <div
               className="menu-item"
@@ -109,11 +104,9 @@ const SideHeader = ({
               onMouseLeave={() => setShowPlayOptions(false)}
               onClick={handlePlayClick}
             >
-              <span className="menu-icon">🕹️</span> Play
+              <span className="menu-icon">🧩</span> Play Now
               {showPlayOptions && (
-                <div className="dropdown-menu">
-                  <div>Play</div>
-                </div>
+                <div className="dropdown-menu"></div>
               )}
             </div>
 
@@ -121,7 +114,7 @@ const SideHeader = ({
               <span className="menu-icon">📘</span> Game Tutorial
             </div>
             <div className="menu-item" onClick={handlePartnersClick}>
-              <span className="menu-icon">💰</span>Join as Investor
+              <span className="menu-icon">💰</span>Donation Vault
             </div>
             <div className="menu-item" onClick={handleAboutClick}>
               <span className="menu-icon">ℹ️</span> About Vyuh
@@ -130,11 +123,7 @@ const SideHeader = ({
         </>
       )}
 
-      {/* Main Content */}
       <div className="main-content">
-
-
-        {/* Render image and button only if currentContent is null */}
         {currentContent === null && (
           <>
             <img
@@ -173,11 +162,10 @@ const SideHeader = ({
               🏆 Play Now 🏆
             </button>
 
-            {/* Play Online Button */}
             <button
               style={{
                 position: 'absolute',
-                top: '555px', // Adjust position below the "Play Now" button
+                top: '555px',
                 left: '15px',
                 width: '400px',
                 height: '50px',
@@ -196,11 +184,10 @@ const SideHeader = ({
               🎮 Play Online 🎮
             </button>
 
-            {/* Coming Soon Message */}
             {comingSoon && (
               <div style={{
                 position: 'absolute',
-                top: '618px', // Adjust position for the message
+                top: '618px',
                 left: '30px',
                 width: '360px',
                 height: '20px',
@@ -216,7 +203,6 @@ const SideHeader = ({
             )}
           </>
         )}
-        
 
         {currentContent === 'play' && <div></div>}
         {currentContent === 'learn' && <div></div>}
@@ -227,7 +213,6 @@ const SideHeader = ({
         {currentContent === 'partners' && <div></div>}
       </div>
 
-      {/* Privacy Policy Modal */}
       {showPrivacyModal && (
         <div className="privacy-modal">
           <div className="modal-content">
@@ -240,11 +225,9 @@ const SideHeader = ({
         </div>
       )}
 
-      {/* Footer Section */}
       <footer className="footer">
         <div className="footer-text">
           <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>📥Support</a> |  
-          
           <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>📜User Agreement</a> |
           <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>🔐Privacy Policy</a>
         </div>
@@ -257,7 +240,7 @@ const SideHeader = ({
         </div>
 
         <div className="footer-copyright">
-           thevyuh.com © 2024
+          thevyuh.com © 2024
         </div>
       </footer>
     </div>
@@ -265,4 +248,3 @@ const SideHeader = ({
 };
 
 export default SideHeader;
-

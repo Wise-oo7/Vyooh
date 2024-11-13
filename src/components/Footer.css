@@ -441,3 +441,102 @@ body {
     padding: 8px 16px;
   }
 }
+
+
+/* Play.css */
+.play-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; /* Make the container a reference point for absolute positioning */
+}
+
+/* Customizable box with flexible positioning */
+.play-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+  width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Custom Positioning */
+  position: absolute; /* Allows positioning using top, left, right, bottom */
+  top: 30%;  /* Adjust the vertical position */
+  left: 5%; /* Adjust the horizontal position */
+  /* Modify or add right/bottom as needed for custom layout */
+}
+
+.play-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.play-button {
+  width: 80%;
+  max-width: 300px;
+  height: 60px;
+  margin: 10px 0;
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.play-button:hover {
+  background-color: #1e1e2d;
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.play-button:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .play-box {
+    width: 90%;
+    padding: 30px 15px;
+    top: 10%; /* Adjust position for smaller screens */
+    left: 5%;
+  }
+
+  .play-button {
+    width: 90%;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .play-box {
+    padding: 20px 10px;
+    top: 30%; /* Further adjustment for mobile screens */
+    left: 5%;
+  }
+
+  .play-button {
+    width: 100%;
+    font-size: 16px;
+    height: 50px;
+  }
+}

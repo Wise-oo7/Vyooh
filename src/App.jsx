@@ -11,91 +11,80 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import Partners from './components/Partners';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(window.location.pathname.slice(1) || ''); // Start with path or empty if root
+  const [currentPage, setCurrentPage] = useState(window.location.pathname.slice(1) || ''); // Default to the URL path or blank
 
-  // Function to handle Play button click
-  const handlePlayClick = () => {
-    setCurrentPage('play');
+  // Function to update `currentPage` and reset page content
+  const navigateToPage = (page) => {
+    setCurrentPage(page);
+    window.history.pushState(null, '', `/${page}`); // Update browser history
   };
 
-  // Function to handle "Play with Mahabharat" button click
-  const handleMahabharatClick = () => {
-    setCurrentPage('board');
-  };
+  // Handle "Play" button events with specific pages
+  const handlePlayClick = () => navigateToPage('play');
+  const handleMahabharatClick = () => navigateToPage('board');
+  const handleSuperPowerClick = () => navigateToPage('bond');
 
-  // Function to handle "Play With SuperPower" button click
-  const handleSuperPowerClick = () => {
-    setCurrentPage('bond');
-  };
-
-  // Effect to handle popstate and set currentPage to empty if URL is root
+  // Effect to handle browser back/forward navigation
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.slice(1);
-      setCurrentPage(path || ''); // If path is empty, set to empty to indicate blank home
+      setCurrentPage(path || ''); // Set currentPage to root if URL path is empty
     };
-
     window.addEventListener('popstate', handlePopState);
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Update the browser history whenever currentPage changes
-  useEffect(() => {
-    if (currentPage) {
-      window.history.pushState(null, '', `/${currentPage}`);
-    } else {
-      window.history.pushState(null, '', '/'); // Go to root URL for a blank home
+  // Render the active component based on `currentPage`
+  const renderPageContent = () => {
+    switch (currentPage) {
+      case 'play':
+        return (
+          <div className="play-box">
+            <button className="play-button" onClick={handleMahabharatClick}>
+              🎲व्यूह🎲
+            </button>
+            <button className="play-button" onClick={handleSuperPowerClick}>
+              🏆ColdWar🏆
+            </button>
+          </div>
+        );
+      case 'board':
+        return <div className="board-container"><Board /></div>;
+      case 'bond':
+        return <div className="bond-container"><Bond /></div>;
+      case 'learn':
+        return <div className="learn-container"><Learn /></div>;
+      case 'support':
+        return <div className="support-container"><Support /></div>;
+      case 'about':
+        return <div className="about-container"><About /></div>;
+      case 'userAgreement':
+        return <div className="useragreement-container"><UserAgreement /></div>;
+      case 'privacyPolicy':
+        return <div className="privacy-policy-container"><PrivacyPolicy /></div>;
+      case 'partners':
+        return <div className="partners-container"><Partners /></div>;
+      default:
+        return <div>Welcome Back🎡</div>;
     }
-  }, [currentPage]);
+  };
 
   return (
     <div className="App">
       <SideHeader 
         onPlayClick={handlePlayClick}
-        onLearnClick={() => setCurrentPage('learn')}
-        onSupportClick={() => setCurrentPage('support')}
-        onAboutClick={() => setCurrentPage('about')}
-        onUserAgreementClick={() => setCurrentPage('userAgreement')}
-        onPrivacyPolicyClick={() => setCurrentPage('privacyPolicy')}
-        onPartnersClick={() => setCurrentPage('partners')}
+        onLearnClick={() => navigateToPage('learn')}
+        onSupportClick={() => navigateToPage('support')}
+        onAboutClick={() => navigateToPage('about')}
+        onUserAgreementClick={() => navigateToPage('userAgreement')}
+        onPrivacyPolicyClick={() => navigateToPage('privacyPolicy')}
+        onPartnersClick={() => navigateToPage('partners')}
       />
 
-      {/* Only render content if currentPage is not empty */}
-      {currentPage && (
-        <>
-          {currentPage === 'play' && (
-            <div className="play-box">
-              <button className="play-button" onClick={handleMahabharatClick}>
-                🎲व्यूह🎲
-              </button>
-              <button className="play-button" onClick={handleSuperPowerClick}>
-                🏆ColdWar🏆
-              </button>
-            </div>
-          )}
-
-          {currentPage === 'board' && (
-            <div className="board-container">
-              <Board />
-            </div>
-          )}
-
-          {currentPage === 'bond' && (
-            <div className="bond-container">
-              <Bond />
-            </div>
-          )}
-
-          {currentPage === 'learn' && <div className="learn-container"><Learn /></div>}
-          {currentPage === 'support' && <div className="support-container"><Support /></div>}
-          {currentPage === 'about' && <div className="about-container"><About /></div>}
-          {currentPage === 'userAgreement' && <div className="useragreement-container"><UserAgreement /></div>}
-          {currentPage === 'privacyPolicy' && <div className="privacy-policy-container"><PrivacyPolicy /></div>}
-          {currentPage === 'partners' && <div className="partners-container"><Partners /></div>}
-        </>
-      )}
+      {/* Render the page content */}
+      <div className="page-content">
+        {renderPageContent()}
+      </div>
     </div>
   );
 }

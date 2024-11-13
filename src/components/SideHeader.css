@@ -14,24 +14,25 @@
 }
 
 .side-header.expanded {
-    height: 20px;
+    height: 50px;
 }
 
 .side-header.collapsed {
     height: 8px;
 }
 
-.hamburger-icon {
-    font-size: 20px;
-    cursor: pointer;
-    margin: 0 10px;
+.vyuh-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
 }
 
-.vyuh-logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: tomato;
-    margin-left: 10px;
+.logo-image {
+  margin-left: -2vh;
+  margin-top: 1.2vh;
+  height: 5vh;
+  width: 12vh;
 }
 
 .menu-options {
@@ -108,12 +109,8 @@
         height: 45px;
     }
 
-    .hamburger-icon {
-        font-size: 18px;
-    }
-
     .vyuh-logo {
-        font-size: 25px;
+        font-size: 35px;
     }
 
     .menu-item {
@@ -133,12 +130,9 @@
         height: 40px;
     }
 
-    .hamburger-icon {
-        font-size: 16px;
-    }
 
     .vyuh-logo {
-        font-size: 22px;
+        font-size: 28px;
     }
 
     .menu-item {
@@ -156,10 +150,6 @@
     /* Phones */
     .side-header {
         height: 35px;
-    }
-
-    .hamburger-icon {
-        font-size: 14px;
     }
 
     .vyuh-logo {
@@ -243,13 +233,13 @@
   
   .footer-text {
     text-align: center;
-    margin-bottom: 1px;
+    margin-bottom: 3px;
   }
   
   .footer-text a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1px;
+    margin: 0 4px;
   }
   
   .footer-text a:hover {
@@ -259,7 +249,7 @@
   .footer-icons {
     display: flex;
     justify-content: center;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
   }
   
   .footer-icons a {

@@ -27,13 +27,6 @@ import "../App.css";
   const pandavNames = ["युधिष्ठिर", "अर्जुन", "भीम", "नकुल", "सहदेव", "अभिमन्यु", "धृष्टद्युम्न", "सत्यकी", "घटोत्कच"];
   const kauravNames = ["भीष्म", "द्रोणाचार्य", "कर्ण", "अश्वत्थामा", "कृपाचार्य", "कृतवर्मा", "दुर्योधन", "दुशासन", "युयुत्सु"];
 
-
-  //const pandavNames = ["INDIA", "RUSSIA", "CHINA", "SOUTH KOREA", "JAPAN", "SAUDI ARABIA", "NEPAL", "INDONE SIA", "IRAN"];
-     
-  //const kauravNames = ["UNITED STATES", "CANADA", "FRANCE", "UNITED KING DOM", "GER MANY", "ITALY", "TURKEY", "SPAIN", "POLAND"];
-
-
-
   const movementRules = {
     0: [1, 3], 1: [0, 2, 9], 2: [1, 4], 3: [0, 11, 5], 4: [2, 7, 12],
     5: [3, 6], 6: [5, 14, 7], 7: [6, 4], 8: [9, 11], 9: [1, 8, 10, 17],
@@ -180,10 +173,10 @@ const handleRemove = () => {
 
   // Check for winner
   useEffect(() => {
-    if (kingRemovalCount >= 9) {
-      setWinner("Pandav");
-    } else if (queenRemovalCount >= 9) {
-      setWinner("Kaurav");
+    if (kingRemovalCount >= 8) {
+      setWinner("Pandav🛡️");
+    } else if (queenRemovalCount >= 8) {
+      setWinner("Kaurav🧸");
     }
   }, [kingRemovalCount, queenRemovalCount]);
 
@@ -220,13 +213,13 @@ const handleRemove = () => {
       )}
 
       <div className="counter-buttons">
-        <button className="king-count-button">Pandav Points | {kingRemovalCount} | {Math.floor(kingTime / 60)}:{String(kingTime % 60).padStart(2, '0')}</button>
-        <button className="queen-count-button">Kaurav Points | {queenRemovalCount} | {Math.floor(queenTime / 60)}:{String(queenTime % 60).padStart(2, '0')}</button>
+        <button className="king-count-button">Pandav🛡️ Points | {kingRemovalCount} | {Math.floor(kingTime / 60)}:{String(kingTime % 60).padStart(2, '0')}</button>
+        <button className="queen-count-button">Kaurav🧸 Points | {queenRemovalCount} | {Math.floor(queenTime / 60)}:{String(queenTime % 60).padStart(2, '0')}</button>
       </div>
 
       {winner && (
         <div className="winner-box">
-          🎉🎈🎉 Congratulations! <strong>{winner}</strong> won! 🎈🎉🎈
+          🎉🎈🎉🎈🎉🎉🎈🎉🎉🎈🎉🎉🎈🎉🎉🎈🎉🎉🎈 Congratulations! <strong>{winner}</strong> Won!🏆 🎉🎈🎉🎈🎉🎉🎈🎉🎉🎈🎉🎉🎈🎉🎉🎈🎈🎉
         </div>
       )}
 
