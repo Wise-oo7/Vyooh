@@ -35,9 +35,16 @@ const Partners = () => {
         for being a vital part of our journey. Let’s make Vyuh’s impact unforgettable, together!
       </p>
       <button onClick={handleDonateClick} className="partners-button">Donate Now</button>
-      <p className="contact-info">-</p>
+
+      {/* QR Code Image below the Donate Now button */}
+      <div className="qr-code-container">
+        <img src="/Donate.jpg" alt="QR Code for Donation" className="qr-code-image" />
+      </div>
+      <p className="contact-info">-----</p>
+      <p className="contact-info">UPI ID:- shanatpandey.5-2@okhdfcbank</p>
+      <p className="contact-info">----------</p>
       <p className="contact-info">Contact us: +91-9303368482 | Animesh | +91-6261292989 | Sanat</p>
-      <p className="contact-info">-</p>
+      <p className="contact-info">----------------</p>
     </div>
   );
 };

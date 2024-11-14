@@ -65,7 +65,7 @@ function App() {
       case 'partners':
         return <div className="partners-container"><Partners /></div>;
       default:
-        return <div>Welcome Back🎡</div>;
+        return <div>🎡</div>;
     }
   };
 

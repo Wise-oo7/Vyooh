@@ -540,3 +540,42 @@ body {
     height: 50px;
   }
 }
+
+
+
+/* Container for the QR code image */
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px; /* Space above the QR code */
+  text-align: center; /* Center the text below the image */
+}
+
+/* Box around the QR code image */
+.qr-code-image {
+  width: 380px; /* Set width of the image */
+  height: 250px; /* Set height of the image */
+  object-fit: cover; /* Ensures the image fits within the box */
+  border-radius: 10px; /* Rounded corners for the image box */
+  border: 8px solid #000; /* Black border around the image */
+  padding: 10px; /* Padding inside the box */
+  background-color: #f8f8f8; /* Background color inside the box */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+/* Line below the QR code image */
+.qr-code-line {
+  width: 80%; /* Line width, adjust as needed */
+  border-top: 2px solid #000; /* Black line */
+  margin: 10px auto; /* Center the line with space around */
+}
+
+/* Optional: Styling for the text below the QR code */
+.qr-code-text {
+  font-size: 14px;
+  color: #555; /* Lighter color for the text */
+  margin-top: 10px; /* Space above the text */
+  font-family: 'Arial', sans-serif; /* Set font */
+}
