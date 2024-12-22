@@ -58,7 +58,6 @@ const About = () => {
       </div>
 
       <div className="footer">
-      thevyuh.com © 2024
       </div>
     </div>
   );
