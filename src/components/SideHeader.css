@@ -174,47 +174,106 @@
 }
 
 
-.image-and-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Ensures the content wraps on smaller screens */
+
+/* Main content container: centers content vertically and horizontally */
+.main-content {
+  position: absolute;
+  top: 650%;              /* Center vertically - Change this to 0% for top alignment */
+  left: 50%;             /* Center horizontally - Change this to 0% for left alignment */
+  transform: translate(-50%, -50%);  /* Adjust for perfect centering, you can remove this to align top-left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* This centers content vertically. You can change this to flex-start for top alignment */
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Responsive image styling */
+.responsive-image {
+  width: 50%;            /* 40% of screen width */
+  max-width: 500px;
+  height: auto;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.play-now-button,
+.play-online-button {
+  width: 40%;
+  max-width: 300px;
+  height: 30px;
+  background-color: #d9534f;
+  color: #fff;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(24, 96, 135, 0.1);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.play-now-button:hover,
+.play-online-button:hover {
+  transform: scale(1.05);
+  background-color: #c9302c;
+}
+
+/* Coming soon notice */
+.coming-soon {
+  width: 40%;
+  max-width: 300px;
+  height: auto;
+  background-color: #f0ad4e;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Apply styles for tablets and mobile screens */
+@media (max-width: 1024px) {
+  .main-content {
+    top: 600%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfect centering */
+    width: 127%; /* Ensure full width */
   }
-  
-  .image-and-buttons img {
-    max-width: 100%;
-    height: auto;
+
+  .responsive-image {
+    width: 100vw;     /* 100% of the viewport width */
+    max-width: none;  /* Remove any maximum width limit */
+    height: auto;     /* Maintain aspect ratio */
   }
-  
-  .buttons {
-    display: flex;
-    flex-direction: column;
+
+  .play-now-button,
+  .play-online-button {
+    width: 200px;    /* Fixed width for buttons */
+    height: 40px;    /* Fixed height for buttons */
   }
-  
-  .buttons button {
-    margin: 10px 0;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+
+  .coming-soon {
+    width: 250px;    /* Fixed width for notice */
   }
-  
-  @media (max-width: 768px) {
-    .image-and-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .buttons {
-      width: 100%;
-      text-align: center;
-    }
-  
-    .buttons button {
-      width: 80%; /* Make buttons full width */
-      margin: 10px auto;
-    }
-  }
-  
+}
+
+
 
 
 .footer {
@@ -282,16 +341,16 @@
   
   @media (max-width: 480px) {
     .footer-text {
-      font-size: 5px;
+      font-size: 14px;
     }
   
     .footer-icons a {
-      font-size: 6px;
+      font-size: 12px;
       margin: 0 4px;
     }
   
     .footer-copyright {
-      font-size: 12px;
+      font-size: 17px;
     }
   }
 
