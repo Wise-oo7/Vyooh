@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import SideHeader from './components/SideHeader';
 import Board from './components/Board';
@@ -9,8 +10,11 @@ import About from './components/About';
 import UserAgreement from './components/UserAgreement';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Partners from './components/Partners';
+import OnlinePlay from './components/OnlinePlay';
+import SignUp from './components/SignUp';
+import FindAPlayer from './components/FindAPlayer';
 
-function App() {
+const App = () => {
   const [currentPage, setCurrentPage] = useState(window.location.pathname.slice(1) || ''); // Default to the URL path or blank
 
   // Function to update `currentPage` and reset page content
@@ -44,7 +48,7 @@ function App() {
               🎲व्यूह🎲
             </button>
             <button className="play-button" onClick={handleSuperPowerClick}>
-              🏆ColdWar🏆
+              🏆World War🏆
             </button>
           </div>
         );
@@ -70,23 +74,32 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <SideHeader 
-        onPlayClick={handlePlayClick}
-        onLearnClick={() => navigateToPage('learn')}
-        onSupportClick={() => navigateToPage('support')}
-        onAboutClick={() => navigateToPage('about')}
-        onUserAgreementClick={() => navigateToPage('userAgreement')}
-        onPrivacyPolicyClick={() => navigateToPage('privacyPolicy')}
-        onPartnersClick={() => navigateToPage('partners')}
-      />
+    <Router>
+      <div className="App">
+        <SideHeader 
+          onPlayClick={handlePlayClick}
+          onLearnClick={() => navigateToPage('learn')}
+          onSupportClick={() => navigateToPage('support')}
+          onAboutClick={() => navigateToPage('about')}
+          onUserAgreementClick={() => navigateToPage('userAgreement')}
+          onPrivacyPolicyClick={() => navigateToPage('privacyPolicy')}
+          onPartnersClick={() => navigateToPage('partners')}
+          OnlinePlayClick={() => navigateToPage('onlinePlay')}
 
-      {/* Render the page content */}
-      <div className="page-content">
-        {renderPageContent()}
+        />
+
+        <div className="page-content">
+          {renderPageContent()}
+        </div>
+
+        <Routes>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/findaplayer" element={<FindAPlayer />} />
+          <Route path="/board" element={<Board />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;

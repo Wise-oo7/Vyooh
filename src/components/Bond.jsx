@@ -190,9 +190,9 @@ import "../App.css";
   // Check for winner
   useEffect(() => {
     if (kingRemovalCount >= 7) {
-      setWinner("Pandav🛡️");
+      setWinner("RedArmy🛡️");
     } else if (queenRemovalCount >= 8) {
-      setWinner("Kaurav🧸");
+      setWinner("WhiteArmy️🧸");
     }
   }, [kingRemovalCount, queenRemovalCount]);
 
@@ -253,11 +253,23 @@ import "../App.css";
       <div
         className="blinking-light"
         style={{
-        backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
-      }}
-      ></div>
+          backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "Blue",
+          fontSize: "0.6rem",
+          fontWeight: "lighter",
+          height: "60px", // Adjust for better display
+          width: "200px", // Adjust for better display
+          borderRadius: "10px", // Optional: rounded corners
+          textAlign: "center",
+        }}
+      >
+        {isKingTurn ? "Turn is 🛡️ RedArmy" : "Turn is 🌟 WhiteArmy️"}
       </div>
-      
+    </div>
+
       <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
         <rect x="5" y="5" width="90" height="90" fill="none" stroke="white" strokeWidth="0.2"/>
         <rect x="20" y="20" width="60" height="60" fill="none" stroke="white" strokeWidth="0.2"/>

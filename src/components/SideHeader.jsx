@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './SideHeader.css';
+import OnlinePlay from './OnlinePlay';
+
 const SideHeader = ({ 
   onPlayClick, 
   onLearnClick, 
@@ -7,7 +9,8 @@ const SideHeader = ({
   onAboutClick, 
   onUserAgreementClick,
   onPrivacyPolicyClick, 
-  onPartnersClick 
+  onPartnersClick,
+  OnlinePlayClick 
 }) => {
   const [showMenu, setShowMenu] = useState(true);
   const [showPlayOptions, setShowPlayOptions] = useState(false);
@@ -44,17 +47,22 @@ const SideHeader = ({
     setCurrentContent('userAgreement');
     if (onUserAgreementClick) onUserAgreementClick();
   };
+
   const handlePrivacyPolicyClick = () => {
     setCurrentContent('privacyPolicy');
     if (onPrivacyPolicyClick) onPrivacyPolicyClick();
   };
+
   const handlePartnersClick = () => {
     setCurrentContent('partners');
     if (onPartnersClick) onPartnersClick();
   };
+
   const handlePlayOnlineClick = () => {
-    setComingSoon(true);
+    setCurrentContent('onlinePlay'); // Navigate to OnlinePlay page
+    if (OnlinePlayClick) OnlinePlayClick();
   };
+
   useEffect(() => {
     const handlePopState = () => {
       setCurrentContent(null);
@@ -64,6 +72,7 @@ const SideHeader = ({
       window.removeEventListener('popstate', handlePopState);
     };
   }, []);
+
   useEffect(() => {
     const accepted = localStorage.getItem('privacyAccepted');
     if (!accepted) {
@@ -72,11 +81,13 @@ const SideHeader = ({
       setPrivacyAccepted(true);
     }
   }, []);
+
   const handleAcceptPrivacyPolicy = () => {
     localStorage.setItem('privacyAccepted', 'true');
     setPrivacyAccepted(true);
     setShowPrivacyModal(false);
   };
+
   return (
     <div className={`side-header ${showMenu ? 'expanded' : 'collapsed'}`}>
       <div className="hamburger-icon" onClick={toggleMenu}></div>
@@ -103,7 +114,7 @@ const SideHeader = ({
               <span className="menu-icon">📘</span> Game Tutorial
             </div>
             <div className="menu-item" onClick={handlePartnersClick}>
-              <span className="menu-icon">💰</span>Donation Vault
+              <span className="menu-icon">💰</span> Donation Vault
             </div>
             <div className="menu-item" onClick={handleAboutClick}>
               <span className="menu-icon">ℹ️</span> About Vyuh
@@ -119,15 +130,11 @@ const SideHeader = ({
              🏆 Play Now 🏆
             </button>
             <button className="play-online-button" onClick={handlePlayOnlineClick}>
-            🎮 Play Online 🎮
+              🎮 Play Online 🎮
             </button>
-            {comingSoon && (
-            <div className="coming-soon">
-            🤝 Coming Soon 🤝
-            </div>
-            )}
           </>
         )}
+        {currentContent === 'onlinePlay' && <OnlinePlay />} {/* Render OnlinePlay */}
         {currentContent === 'play' && <div></div>}
         {currentContent === 'learn' && <div></div>}
         {currentContent === 'support' && <div></div>}
@@ -149,9 +156,9 @@ const SideHeader = ({
       )}
       <footer className="footer">
         <div className="footer-text">
-          <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>📥Support</a> |  
-          <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>📜User Agreement</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>🔐Privacy Policy</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>📥 Support</a> |  
+          <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>📜 User Agreement</a> |
+          <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>🔐 Privacy Policy</a>
         </div>
         <div className="footer-icons">
           <a href="https://www" target="_blank" rel="noopener noreferrer">X</a>
@@ -166,4 +173,5 @@ const SideHeader = ({
     </div>
   );
 };
+
 export default SideHeader;

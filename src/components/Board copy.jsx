@@ -226,8 +226,8 @@ const Board = () => {
       )}
 
       <div className="counter-buttons">
-        <button className="king-count-button">पांडव 🛡️ Points | {kingRemovalCount} | {Math.floor(kingTime / 60)}:{String(kingTime % 60).padStart(2, '0')}</button>
-        <button className="queen-count-button">कौरव 🧸 Points | {queenRemovalCount} | {Math.floor(queenTime / 60)}:{String(queenTime % 60).padStart(2, '0')}</button>
+        <button className="king-count-button">Pandav🛡️ Points | {kingRemovalCount} | {Math.floor(kingTime / 60)}:{String(kingTime % 60).padStart(2, '0')}</button>
+        <button className="queen-count-button">Kaurav🧸 Points | {queenRemovalCount} | {Math.floor(queenTime / 60)}:{String(queenTime % 60).padStart(2, '0')}</button>
       </div>
 
       {winner && (
@@ -243,30 +243,17 @@ const Board = () => {
       <div
         className="center-box"
         style={{
-        top: "46%",  // Adjust these values as needed
-        left: "46%", // Adjust these values as needed
-      }}
-      >
-      <div
-        className="blinking-light"
-        style={{
-          backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "Black",
-          fontSize: "0.6rem",
-          fontWeight: "lighter",
-          height: "50px", // Adjust for better display
-          width: "200px", // Adjust for better display
-          borderRadius: "10px", // Optional: rounded corners
-          textAlign: "center",
+          top: "46%",  // Adjust these values as needed
+          left: "46%", // Adjust these values as needed
         }}
       >
-        {isKingTurn ? "Turn is 🛡️ पांडव" : "Turn is 🌟 कौरव"}
+        <div
+          className="blinking-light"
+          style={{
+            backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
+          }}
+        ></div>
       </div>
-    </div>
-
 
       <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
         <rect x="5" y="5" width="90" height="90" fill="none" stroke="red" strokeWidth="0.4" />

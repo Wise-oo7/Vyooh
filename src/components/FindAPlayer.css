@@ -1,0 +1,125 @@
+/* Container styles */
+.find-player-container {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    min-height: 100vh;       /* Ensure full viewport height */
+    padding: 2rem;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #2c3e50, #3498db); /* Different gradient background */
+    width: 100%;
+}
+
+/* Form styles */
+.find-player-form {
+    background: #ffffff;
+    padding: 3rem; /* Increased padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow effect */
+    max-width: 600px;  /* Increased width for larger screens */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Heading styles */
+.find-player-form h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #34495e;
+    font-family: 'Roboto', sans-serif; /* A different font for style */
+    font-weight: bold;
+}
+
+/* Label styles */
+.find-player-form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #34495e;
+    text-align: left;
+    width: 100%; /* Ensures labels fit well */
+}
+
+/* Input styles */
+.find-player-form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.find-player-form input:focus {
+    border-color: #2c3e50;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Button styles */
+.find-player-form button {
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem; /* Larger button padding */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+.find-player-form button:hover {
+    background-color: #2c3e50;
+    transform: translateY(-2px);
+}
+
+.find-player-form button:active {
+    transform: translateY(0);
+}
+
+/* Responsive styles for tablets and small screens */
+@media (max-width: 768px) {
+    .find-player-form {
+        padding: 2.5rem;
+    }
+
+    .find-player-form h1 {
+        font-size: 1.8rem;
+    }
+
+    .find-player-form label {
+        font-size: 1rem;
+    }
+
+    .find-player-form input,
+    .find-player-form button {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 480px) {
+    .find-player-form {
+        padding: 1.5rem;
+    }
+
+    .find-player-form h1 {
+        font-size: 1.6rem;
+    }
+
+    .find-player-form label {
+        font-size: 0.9rem;
+    }
+
+    .find-player-form input,
+    .find-player-form button {
+        font-size: 1rem;
+    }
+}

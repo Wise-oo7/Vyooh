@@ -1,41 +1,108 @@
+/* Container styles */
 .signup-container {
-    width: 250px; /* Reduced width */
-    margin: 10px; /* Added margin for spacing */
-    padding: 10px; /* Reduced padding */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Fixed position to stay in place on scroll */
-    top: 10px; /* Distance from the top */
-    right: 10px; /* Distance from the right */
+    display: flex;
+    justify-content: center; /* Keep the container centered horizontally */
+    align-items: center;     /* Keep the container centered vertically */
+    min-height: 50vh;        /* Set the height to 50% of the viewport */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-left: 13px; /* Slightly shift the container to the left */
 }
 
-.signup-container h2 {
+
+/* Form styles */
+.signup-form {
+    background: #ffffff;
+    padding: 2.5rem;  /* Reduced padding for smaller box */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Slightly bigger shadow */
+    max-width: 480px;  /* Decreased max-width for a smaller box */
+    width: 80%;
     text-align: center;
-    font-size: 1rem; /* Smaller font size for title */
-    margin-bottom: 10px; /* Slightly reduced margin */
 }
 
-.signup-container input {
+/* Heading styles */
+.signup-form h1 {
+    font-size: 2.2rem;  /* Slightly smaller font size */
+    margin-bottom: 1.5rem;  /* Reduced space below heading */
+    color: #333333;
+}
+
+/* Label styles */
+.signup-form label {
+    display: block;
+    margin-bottom: 1rem; /* Reduced margin */
+    font-size: 1.1rem;  /* Slightly smaller font size for labels */
+    color: #555555;
+    text-align: left;
+}
+
+/* Input styles */
+.signup-form input {
     width: 100%;
-    padding: 8px; /* Reduced padding */
-    margin: 5px 0; /* Reduced margin */
-    border: 1px solid #ccc;
+    padding: 0.9rem;  /* Reduced padding for input fields */
+    margin-top: 1rem;  /* Consistent margin */
+    border: 1px solid #cccccc;
     border-radius: 5px;
-    font-size: 0.9rem; /* Smaller font size for input */
+    font-size: 1.1rem;  /* Slightly smaller font size for input fields */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-.signup-container button {
-    width: 100%;
-    padding: 8px; /* Reduced padding */
-    background-color: #007bff;
-    color: white;
+.signup-form input:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+/* Button styles */
+.signup-form button {
+    background-color: #6a11cb;
+    color: #ffffff;
+    font-size: 1.1rem;  /* Slightly smaller font size for the button */
+    padding: 0.9rem 1.3rem;  /* Reduced padding for button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.9rem; /* Smaller font size for button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1.5rem;  /* Reduced space between button and input */
+    width: 100%;
 }
 
-.signup-container button:hover {
-    background-color: #0056b3;
+.signup-form button:hover {
+    background-color: #2575fc;
+    transform: translateY(-2px);
+}
+
+.signup-form button:active {
+    transform: translateY(0);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .signup-form {
+        padding: 1.5rem;
+    }
+
+    .signup-form h1 {
+        font-size: 1.8rem;
+    }
+
+    .signup-form label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form {
+        padding: 1.2rem;
+    }
+
+    .signup-form h1 {
+        font-size: 1.6rem;
+    }
+
+    .signup-form label {
+        font-size: 1rem;
+    }
 }
