@@ -10,6 +10,31 @@
 }
 
 /* Remove Button  */
+.message-container {
+  position: absolute;
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Distance from the left */
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white; /* Text color */
+  font-size: 14px; /* Text size */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+@media (max-width: 768px) {
+  .message-container {
+    font-size: 12px; /* Smaller font for small screens */
+    top: 5px; /* Adjust top for smaller screens */
+    left: 5px; /* Adjust left for smaller screens */
+    padding: 8px 10px;
+  }
+}
+
+
+
+/* Remove Button  */
 .remove-button {
   position: absolute;
   padding: 5px 5px;
@@ -290,25 +315,25 @@
     background-color: #576b95;
   }
   
-  
-/* Point table for Panduv and Kauruv */
+/* Base styles for Point Table (Panduv and Kauruv) */
 .counter-buttons {
   position: absolute;
-  top: -7%;
-  left: 20%;
+  top: -9%;
+  left: 15%;
   display: flex;
   flex-direction: row;
-  gap: 195px; /* Space between buttons */
+  gap: 200px; /* Space between buttons */
 }
 
-.king-count-button{
-    padding: 8px 12px;
-    font-size: 0.7rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #d9534f; /* Customize your button color */
-    color: white;
+.king-count-button {
+  padding: 8px 12px;
+  font-size: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #d9534f; /* Customize your button color */
+  color: white;
 }
+
 .queen-count-button {
   padding: 8px 12px;
   font-size: 0.7rem;
@@ -316,9 +341,10 @@
   border-radius: 8px;
   background-color: cadetblue; /* Customize your button color */
   color: white;
-} 
+}
 
-@media (max-width: 768px) { /* For tablets and below */
+/* Tablet and below (max-width: 768px) */
+@media (max-width: 768px) {
   .counter-buttons {
     top: -18%;
     left: 12%;
@@ -331,10 +357,12 @@
   }
 }
 
-@media (max-width: 480px) { /* For mobile devices */
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
   .counter-buttons {
-    top: -18%;
-    left: 10%;
+    top: -22%;
+    left: 20%;
+    gap: 110px;
   }
 
   .king-count-button,
@@ -343,6 +371,56 @@
     padding: 5px 5px;
   }
 }
+
+/* Specific styles for 375x667 screen size */
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  .counter-buttons {
+    top: -15%;
+    left: 8%;
+    gap: 120px; /* Adjust space between buttons */
+  }
+
+  .king-count-button,
+  .queen-count-button {
+    font-size: 0.6rem;
+    padding: 4px 8px;
+    border-radius: 6px; /* Slightly smaller buttons for compact screens */
+  }
+}
+
+
+/* Styles for the turn message */
+.turn-message {
+  position: absolute;
+  top: 40%; /* Adjust the vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+  animation: fade-in-out 3s ease-in-out;
+}
+
+/* Optional fade-in-out animation */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 
 /* Winner Box */
