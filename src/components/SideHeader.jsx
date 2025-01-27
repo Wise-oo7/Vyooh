@@ -1,77 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './SideHeader.css';
 import OnlinePlay from './OnlinePlay';
+import { Link, useNavigate } from 'react-router-dom';
 
-const SideHeader = ({ 
-  onPlayClick, 
-  onLearnClick, 
-  onSupportClick, 
-  onAboutClick, 
-  onUserAgreementClick,
-  onPrivacyPolicyClick, 
-  onPartnersClick,
-  OnlinePlayClick 
-}) => {
+const SideHeader = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [showPlayOptions, setShowPlayOptions] = useState(false);
-  const [currentContent, setCurrentContent] = useState(null);
   const [comingSoon, setComingSoon] = useState(false);
-  const [privacyAccepted, setPrivacyAccepted] = useState(false); 
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-
-  const handlePlayClick = () => {
-    setCurrentContent('play'); // Open Play.jsx
-    if (onPlayClick) onPlayClick();
-  };
-
-  const handleLearnClick = () => {
-    setCurrentContent('learn');
-    if (onLearnClick) onLearnClick();
-  };
-
-  const handleSupportClick = () => {
-    setCurrentContent('support');
-    if (onSupportClick) onSupportClick();
-  };
-
-  const handleAboutClick = () => {
-    setCurrentContent('about');
-    if (onAboutClick) onAboutClick();
-  };
-
-  const handleUserAgreementClick = () => {
-    setCurrentContent('userAgreement');
-    if (onUserAgreementClick) onUserAgreementClick();
-  };
-
-  const handlePrivacyPolicyClick = () => {
-    setCurrentContent('privacyPolicy');
-    if (onPrivacyPolicyClick) onPrivacyPolicyClick();
-  };
-
-  const handlePartnersClick = () => {
-    setCurrentContent('partners');
-    if (onPartnersClick) onPartnersClick();
-  };
-
-  const handlePlayOnlineClick = () => {
-    setCurrentContent('onlinePlay'); // Navigate to OnlinePlay page
-    if (OnlinePlayClick) OnlinePlayClick();
-  };
-
-  useEffect(() => {
-    const handlePopState = () => {
-      setCurrentContent(null);
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
 
   useEffect(() => {
     const accepted = localStorage.getItem('privacyAccepted');
@@ -91,58 +33,33 @@ const SideHeader = ({
   return (
     <div className={`side-header ${showMenu ? 'expanded' : 'collapsed'}`}>
       <div className="hamburger-icon" onClick={toggleMenu}></div>
-      {showMenu && (
-        <>
+      <>
+        <span onClick={() => navigate('/')}>
           <div className="vyuh-logo">
-            <a href="/">
-              <img src="./h.PNG" alt="Vyuh Logo" className="logo-image" />
-            </a>
+            <img src="./h.PNG" alt="Vyuh Logo" className="logo-image" />
           </div>
-          <div className="menu-options">
-            <div
-              className="menu-item"
-              onMouseEnter={() => setShowPlayOptions(true)}
-              onMouseLeave={() => setShowPlayOptions(false)}
-              onClick={handlePlayClick}
-            >
-              <span className="menu-icon">🧩</span> Play Now
-              {showPlayOptions && (
-                <div className="dropdown-menu"></div>
-              )}
-            </div>
-            <div className="menu-item" onClick={handleLearnClick}>
-              <span className="menu-icon">📘</span> Game Tutorial
-            </div>
-            <div className="menu-item" onClick={handlePartnersClick}>
-              <span className="menu-icon">💰</span> Donation Vault
-            </div>
-            <div className="menu-item" onClick={handleAboutClick}>
-              <span className="menu-icon">ℹ️</span> About Vyuh
-            </div>
+        </span>
+        <div className="menu-options">
+          <div
+            className="menu-item"
+            onClick={() => navigate('/play')}
+          >
+            <span className="menu-icon">🧩</span> Play Now
+            {showPlayOptions && (
+              <div className="dropdown-menu"></div>
+            )}
           </div>
-        </>
-      )}
-      <div className="main-content">
-        {currentContent === null && (
-          <>
-            <img src="D.webp" alt="Custom Content" className="responsive-image" />
-            <button className="play-button" onClick={handlePlayClick}>
-             🏆 Play Now 🏆
-            </button>
-            <button className="play-online-button" onClick={handlePlayOnlineClick}>
-              🎮 Play Online 🎮
-            </button>
-          </>
-        )}
-        {currentContent === 'onlinePlay' && <OnlinePlay />} {/* Render OnlinePlay */}
-        {currentContent === 'play' && <div></div>}
-        {currentContent === 'learn' && <div></div>}
-        {currentContent === 'support' && <div></div>}
-        {currentContent === 'about' && <div></div>}
-        {currentContent === 'userAgreement' && <div>U</div>}
-        {currentContent === 'privacyPolicy' && <div>P</div>}
-        {currentContent === 'partners' && <div></div>}
-      </div>
+          <div className="menu-item" onClick={() => navigate("/learn")}>
+            <span className="menu-icon">📘</span> Game Tutorial
+          </div>
+          <div className="menu-item" onClick={() => navigate("/partners")}>
+            <span className="menu-icon">💰</span> Donation Vault
+          </div>
+          <div className="menu-item" onClick={() => navigate("/about")}>
+            <span className="menu-icon">ℹ️</span> About Vyuh
+          </div>
+        </div>
+      </>
       {showPrivacyModal && (
         <div className="privacy-modal">
           <div className="modal-content">
@@ -156,9 +73,9 @@ const SideHeader = ({
       )}
       <footer className="footer">
         <div className="footer-text">
-          <a href="#" onClick={(e) => { e.preventDefault(); handleSupportClick(); }}>📥 Support</a> |  
-          <a href="#" onClick={(e) => { e.preventDefault(); handleUserAgreementClick(); }}>📜 User Agreement</a> |
-          <a href="#" onClick={(e) => { e.preventDefault(); handlePrivacyPolicyClick(); }}>🔐 Privacy Policy</a>
+          <Link to="/support">📥 Support</Link> |
+          <Link to="/userAgreement">📜 User Agreement</Link> |
+          <Link to="/privacyPolicy">🔐 Privacy Policy</Link>
         </div>
         <div className="footer-icons">
           <a href="https://www" target="_blank" rel="noopener noreferrer">X</a>

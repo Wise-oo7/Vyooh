@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import PlayerCount from "./PlayerCount";
 
 const Board = () => {
   const totalButtons = 24;
@@ -20,7 +21,7 @@ const Board = () => {
   const [kingTime, setKingTime] = useState(0);
   const [queenTime, setQueenTime] = useState(0);
   const [winner, setWinner] = useState(null);
-  
+
 
   const [removedPandavNames, setRemovedPandavNames] = useState([]);
   const [removedKauravNames, setRemovedKauravNames] = useState([]);
@@ -68,32 +69,32 @@ const Board = () => {
       const current = newButtons[index];
 
 
-  // Check if it's the player's turn
-  if (current.symbol === "P" && !isKingTurn) {
-  // Create and display the message
-  const messageDiv = document.createElement("div");
-  messageDiv.textContent = "Not Your Turn! It's कौरव⚔️ turn.";
-  messageDiv.className = "turn-message";
-  document.body.appendChild(messageDiv);
-  // Remove the message after 3 seconds
-  setTimeout(() => {
-    messageDiv.remove();
-  }, 3000);
-  return prevButtons;
- }
- if (current.symbol === "K" && isKingTurn) {
-  // Create and display the message
-  const messageDiv = document.createElement("div");
-  messageDiv.textContent = "Not Your Turn! It's पांडव🛡️ turn.";
-  messageDiv.className = "turn-message";
-  document.body.appendChild(messageDiv);
-  // Remove the message after 3 seconds
-  setTimeout(() => {
-    messageDiv.remove();
-  }, 3000);
+      // Check if it's the player's turn
+      if (current.symbol === "P" && !isKingTurn) {
+        // Create and display the message
+        const messageDiv = document.createElement("div");
+        messageDiv.textContent = "Not Your Turn! It's कौरव⚔️ turn.";
+        messageDiv.className = "turn-message";
+        document.body.appendChild(messageDiv);
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+          messageDiv.remove();
+        }, 3000);
+        return prevButtons;
+      }
+      if (current.symbol === "K" && isKingTurn) {
+        // Create and display the message
+        const messageDiv = document.createElement("div");
+        messageDiv.textContent = "Not Your Turn! It's पांडव🛡️ turn.";
+        messageDiv.className = "turn-message";
+        document.body.appendChild(messageDiv);
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+          messageDiv.remove();
+        }, 3000);
 
-  return prevButtons;
-  }
+        return prevButtons;
+      }
 
       console.log({
         prevButtons,
@@ -220,85 +221,83 @@ const Board = () => {
   }, [winner]);
 
   return (
-    <div className="rectangle-container Board-background">
-      {buttons.map((btn, index) => (
-        <button
-          key={index}
-          className={`rectangle-button ${selectedIndex === index ? "selected" : ""}`}
-          onClick={() => handleClick(index)}
-          onContextMenu={(event) => handleContextMenu(event, index)}
-          style={{ backgroundColor: getButtonColor(index) }}
-        >
-          <div className="piece-symbol">{btn.symbol}</div>
-          {btn.name && <div className="piece-name">{btn.name}</div>}
-        </button>
-      ))}
-      {showRemoveButton && (
-        <button
-          className="remove-button"
-          onClick={handleRemove}
-          style={{ position: "fixed", top: removeButtonPosition.top, left: removeButtonPosition.left }}
-        >
-          Remove
-        </button>
-      )}
+    <>
+      <PlayerCount kingRemovalCount={kingRemovalCount} queenRemovalCount={queenRemovalCount} kingTime={kingTime} queenTime={queenTime} />
+      <div className="rectangle-container Board-background">
+        {buttons.map((btn, index) => (
+          <button
+            key={index}
+            className={`rectangle-button ${selectedIndex === index ? "selected" : ""}`}
+            onClick={() => handleClick(index)}
+            onContextMenu={(event) => handleContextMenu(event, index)}
+            style={{ backgroundColor: getButtonColor(index) }}
+          >
+            <div className="piece-symbol">{btn.symbol}</div>
+            {btn.name && <div className="piece-name">{btn.name}</div>}
+          </button>
+        ))}
+        {showRemoveButton && (
+          <button
+            className="remove-button"
+            onClick={handleRemove}
+            style={{ position: "fixed", top: removeButtonPosition.top, left: removeButtonPosition.left }}
+          >
+            Remove
+          </button>
+        )}
 
-      <div className="counter-buttons">
-        <button className="king-count-button">पांडव 🛡️ Points | {kingRemovalCount} | {Math.floor(kingTime / 60)}:{String(kingTime % 60).padStart(2, '0')}</button>
-        <button className="queen-count-button">कौरव ⚔️ Points | {queenRemovalCount} | {Math.floor(queenTime / 60)}:{String(queenTime % 60).padStart(2, '0')}</button>
-      </div>
+        {winner && (
+          <div className="winner-box">
+            🎉🎈 Congratulations! <strong>{winner}</strong> Won ! 🏆 🎉🎈🎉🎈🎈🎉🎈🎉🎈🎉🎈🎉
+          </div>
+        )}
 
-      {winner && (
-        <div className="winner-box">
-          🎉🎈 Congratulations! <strong>{winner}</strong> Won ! 🏆 🎉🎈🎉🎈🎈🎉🎈🎉🎈🎉🎈🎉
+        <div className="c">
+          <div className="rectangle"></div>
         </div>
-      )}
 
-      <div className="c">
-        <div className="rectangle"></div>
-      </div>
-
-      <div
-        className="center-box"
-        style={{
-          top: "46%",  // Adjust these values as needed
-          left: "46%", // Adjust these values as needed
-        }}
-      >
         <div
-          className="blinking-light"
+          className="center-box"
           style={{
-            backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "Blue",
-            fontSize: "0.6rem",
-            fontWeight: "lighter",
-            height: "55px", // Adjust for better display
-            width: "200px", // Adjust for better display
-            borderRadius: "10px", // Optional: rounded corners
-            textAlign: "center",
+            top: "46%",  // Adjust these values as needed
+            left: "46%", // Adjust these values as needed
           }}
         >
-          {isKingTurn ? "Turn is 🛡️ पांडव" : "Turn is ⚔️ कौरव"}
+          <div
+            className="blinking-light"
+            style={{
+              backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "Blue",
+              fontSize: "0.6rem",
+              fontWeight: "lighter",
+              height: "55px", // Adjust for better display
+              width: "200px", // Adjust for better display
+              borderRadius: "10px", // Optional: rounded corners
+              textAlign: "center",
+            }}
+          >
+            {isKingTurn ? "Turn is 🛡️ पांडव" : "Turn is ⚔️ कौरव"}
+          </div>
         </div>
-      </div>
 
-      <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <rect x="5" y="5" width="90" height="90" fill="none" stroke="red" strokeWidth="0.4" />
-        <rect x="20" y="20" width="60" height="60" fill="none" stroke="blue" strokeWidth="0.4" />
-        <rect x="35" y="35" width="30" height="30" fill="none" stroke="orange" strokeWidth="0.4" />
-        <line x1="50%" y1="5%" x2="50%" y2="20%" stroke="blue" strokeWidth="0.4" />
-        <line x1="50%" y1="20%" x2="50%" y2="35%" stroke="blue" strokeWidth="0.4" />
-        <line x1="5%" y1="50%" x2="20%" y2="50%" stroke="blue" strokeWidth="0.4" />
-        <line x1="20%" y1="50%" x2="35%" y2="50%" stroke="blue" strokeWidth="0.4" />
-        <line x1="95%" y1="50%" x2="80%" y2="50%" stroke="blue" strokeWidth="0.4" />
-        <line x1="80%" y1="50%" x2="65%" y2="50%" stroke="blue" strokeWidth="0.4" />
-        <line x1="50%" y1="95%" x2="50%" y2="80%" stroke="blue" strokeWidth="0.4" />
-        <line x1="50%" y1="80%" x2="50%" y2="65%" stroke="blue" strokeWidth="0.4" />
-      </svg>
-    </div>
+        <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <rect x="5" y="5" width="90" height="90" fill="none" stroke="red" strokeWidth="0.4" />
+          <rect x="20" y="20" width="60" height="60" fill="none" stroke="blue" strokeWidth="0.4" />
+          <rect x="35" y="35" width="30" height="30" fill="none" stroke="orange" strokeWidth="0.4" />
+          <line x1="50%" y1="5%" x2="50%" y2="20%" stroke="blue" strokeWidth="0.4" />
+          <line x1="50%" y1="20%" x2="50%" y2="35%" stroke="blue" strokeWidth="0.4" />
+          <line x1="5%" y1="50%" x2="20%" y2="50%" stroke="blue" strokeWidth="0.4" />
+          <line x1="20%" y1="50%" x2="35%" y2="50%" stroke="blue" strokeWidth="0.4" />
+          <line x1="95%" y1="50%" x2="80%" y2="50%" stroke="blue" strokeWidth="0.4" />
+          <line x1="80%" y1="50%" x2="65%" y2="50%" stroke="blue" strokeWidth="0.4" />
+          <line x1="50%" y1="95%" x2="50%" y2="80%" stroke="blue" strokeWidth="0.4" />
+          <line x1="50%" y1="80%" x2="50%" y2="65%" stroke="blue" strokeWidth="0.4" />
+        </svg>
+      </div>
+    </>
   );
 };
 export default Board;

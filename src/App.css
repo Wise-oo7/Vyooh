@@ -1,6 +1,7 @@
 /* General background for the Board */
 .Board-background {
-  background-image: url('/g.jpg'); /* Replace with the correct path if the image is in the public folder */
+  background-image: url('/g.jpg');
+  /* Replace with the correct path if the image is in the public folder */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,22 +13,33 @@
 /* Remove Button  */
 .message-container {
   position: absolute;
-  top: 10px; /* Distance from the top */
-  left: 10px; /* Distance from the left */
+  top: 10px;
+  /* Distance from the top */
+  left: 10px;
+  /* Distance from the left */
   padding: 10px 15px;
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-  color: white; /* Text color */
-  font-size: 14px; /* Text size */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  z-index: 1000; /* Ensure it stays above other elements */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Semi-transparent background */
+  color: white;
+  /* Text color */
+  font-size: 14px;
+  /* Text size */
+  border-radius: 8px;
+  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* Subtle shadow */
+  z-index: 1000;
+  /* Ensure it stays above other elements */
 }
 
 @media (max-width: 768px) {
   .message-container {
-    font-size: 12px; /* Smaller font for small screens */
-    top: 5px; /* Adjust top for smaller screens */
-    left: 5px; /* Adjust left for smaller screens */
+    font-size: 12px;
+    /* Smaller font for small screens */
+    top: 5px;
+    /* Adjust top for smaller screens */
+    left: 5px;
+    /* Adjust left for smaller screens */
     padding: 8px 10px;
   }
 }
@@ -45,7 +57,8 @@
   border-radius: 4px;
   cursor: pointer;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-  transform: translate(-103%, -180%); /* Centers exactly over the clicked button */
+  transform: translate(-103%, -180%);
+  /* Centers exactly over the clicked button */
   z-index: 1000;
 }
 
@@ -63,13 +76,11 @@
 /* Main container for the rectangles */
 .rectangle-container {
   position: relative;
-  top: 5px;
-  left: 20px;
   width: 90vw;
   max-width: 650px;
-  height: 90vw;  
+  height: 90vw;
   max-height: 520px;
-  margin: 50px auto;
+  margin: 25px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,7 +92,8 @@
   width: 100%;
   height: 100%;
   border: 1px solid red;
-  z-index: -1; /* Puts the red rectangle behind the buttons */
+  z-index: -1;
+  /* Puts the red rectangle behind the buttons */
 }
 
 .rectangle {
@@ -109,40 +121,147 @@
 }
 
 .selected {
-  transform: scale(1.1); /* Slightly enlarge the selected button */
-  border: 2px solid blue; /* Blue border to show it’s selected */
+  transform: scale(1.1);
+  /* Slightly enlarge the selected button */
+  border: 2px solid blue;
+  /* Blue border to show it’s selected */
 }
 
 /* Button positions for the 3 rectangles */
 /* Outer Rectangle */
-.rectangle-container button:nth-child(1) { top: 4%; left: 4%; }
-.rectangle-container button:nth-child(2) { top: 4%; left: 50%; transform: translateX(-50%); }
-.rectangle-container button:nth-child(3) { top: 4%; right: 4%; }
-.rectangle-container button:nth-child(4) { top: 50%; left: 4%; transform: translateY(-50%); }
-.rectangle-container button:nth-child(5) { top: 50%; right: 4%; transform: translateY(-50%); }
-.rectangle-container button:nth-child(6) { bottom: 4%; left: 4%; }
-.rectangle-container button:nth-child(7) { bottom: 4%; left: 50%; transform: translateX(-50%); }
-.rectangle-container button:nth-child(8) { bottom: 4%; right: 4%; }
+.rectangle-container button:nth-child(1) {
+  top: 4%;
+  left: 4%;
+}
+
+.rectangle-container button:nth-child(2) {
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rectangle-container button:nth-child(3) {
+  top: 4%;
+  right: 4%;
+}
+
+.rectangle-container button:nth-child(4) {
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+}
+
+.rectangle-container button:nth-child(5) {
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+}
+
+.rectangle-container button:nth-child(6) {
+  bottom: 4%;
+  left: 4%;
+}
+
+.rectangle-container button:nth-child(7) {
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rectangle-container button:nth-child(8) {
+  bottom: 4%;
+  right: 4%;
+}
 
 /* Middle Rectangle */
-.rectangle-container button:nth-child(9) { top: 19%; left: 19%; }
-.rectangle-container button:nth-child(10) { top: 18%; left: 50%; transform: translateX(-50%); }
-.rectangle-container button:nth-child(11) { top: 19%; right: 19%; }
-.rectangle-container button:nth-child(12) { top: 50%; left: 18%; transform: translateY(-50%); }
-.rectangle-container button:nth-child(13) { top: 50%; right: 18%; transform: translateY(-50%); }
-.rectangle-container button:nth-child(14) { bottom: 19%; left: 19%; }
-.rectangle-container button:nth-child(15) { bottom: 18%; left: 50%; transform: translateX(-50%); }
-.rectangle-container button:nth-child(16) { bottom: 19%; right: 19%; }
+.rectangle-container button:nth-child(9) {
+  top: 19%;
+  left: 19%;
+}
+
+.rectangle-container button:nth-child(10) {
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rectangle-container button:nth-child(11) {
+  top: 19%;
+  right: 19%;
+}
+
+.rectangle-container button:nth-child(12) {
+  top: 50%;
+  left: 18%;
+  transform: translateY(-50%);
+}
+
+.rectangle-container button:nth-child(13) {
+  top: 50%;
+  right: 18%;
+  transform: translateY(-50%);
+}
+
+.rectangle-container button:nth-child(14) {
+  bottom: 19%;
+  left: 19%;
+}
+
+.rectangle-container button:nth-child(15) {
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rectangle-container button:nth-child(16) {
+  bottom: 19%;
+  right: 19%;
+}
 
 /* Inner Rectangle */
-.rectangle-container button:nth-child(17) { top: 34%; left: 34%; }
-.rectangle-container button:nth-child(18) { top: 34%; left: 50%; transform: translateX(-50%); }
-.rectangle-container button:nth-child(19) { top: 34%; right: 34%; }
-.rectangle-container button:nth-child(20) { top: 50%; left: 34%; transform: translateY(-50%); }
-.rectangle-container button:nth-child(21) { top: 50%; right: 34%; transform: translateY(-50%); }
-.rectangle-container button:nth-child(22) { bottom: 34%; left: 34%; }
-.rectangle-container button:nth-child(23) { bottom: 34%; left: 50%; transform: translateX(-50%); }
-.rectangle-container button:nth-child(24) { bottom: 34%; right: 34%; }
+.rectangle-container button:nth-child(17) {
+  top: 34%;
+  left: 34%;
+}
+
+.rectangle-container button:nth-child(18) {
+  top: 34%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rectangle-container button:nth-child(19) {
+  top: 34%;
+  right: 34%;
+}
+
+.rectangle-container button:nth-child(20) {
+  top: 50%;
+  left: 34%;
+  transform: translateY(-50%);
+}
+
+.rectangle-container button:nth-child(21) {
+  top: 50%;
+  right: 34%;
+  transform: translateY(-50%);
+}
+
+.rectangle-container button:nth-child(22) {
+  bottom: 34%;
+  left: 34%;
+}
+
+.rectangle-container button:nth-child(23) {
+  bottom: 34%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rectangle-container button:nth-child(24) {
+  bottom: 34%;
+  right: 34%;
+}
 
 /* SVG for the 3 rectangles */
 .rectangle-lines {
@@ -155,18 +274,22 @@
 }
 
 .piece-symbol {
-  font-size: 1px; /* Larger font size for the symbol */
+  font-size: 1px;
+  /* Larger font size for the symbol */
   font-weight: bold;
   color: black;
   display: block;
 }
 
 .piece-name {
-  font-size: 7px; /* Smaller font size for the name */
+  font-size: 7px;
+  /* Smaller font size for the name */
   color: black;
-  margin-top: 2px; /* Space between symbol and name */
+  margin-top: 2px;
+  /* Space between symbol and name */
   line-height: 1;
-  text-align: center; /* Center the text below the symbol */
+  text-align: center;
+  /* Center the text below the symbol */
 }
 
 
@@ -174,41 +297,51 @@
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .Board-background {
-    background-image: url('g.jpp'); /* Ensuring the same image is used */
+    background-image: url('g.jpp');
+    /* Ensuring the same image is used */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #333; /* A fallback color in case the image fails */
+    background-color: #333;
+    /* A fallback color in case the image fails */
   }
 
   .rectangle-button {
-    background-color: #444; /* Dark background for buttons */
-    color: #ddd; /* Lighter text color for better contrast */
+    background-color: #444;
+    /* Dark background for buttons */
+    color: #ddd;
+    /* Lighter text color for better contrast */
   }
 
   .white-button {
-    background-color: #eee; /* Ensure white button still appears white */
+    background-color: #eee;
+    /* Ensure white button still appears white */
     color: black;
   }
 
   .rectangle-lines {
-    stroke: white; /* White lines for better visibility */
+    stroke: white;
+    /* White lines for better visibility */
   }
 }
 
 /* Light mode styles */
 @media (prefers-color-scheme: light) {
   .Board-background {
-    background-image: url('hh.PNG'); /* Ensuring the same image is used */
+    background-image: url('hh.PNG');
+    /* Ensuring the same image is used */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #f0f0f0; /* A fallback color for light mode */
+    background-color: #f0f0f0;
+    /* A fallback color for light mode */
   }
 
   .rectangle-button {
-    background-color: white; /* Light background for buttons */
-    color: black; /* Darker text color for better contrast */
+    background-color: white;
+    /* Light background for buttons */
+    color: black;
+    /* Darker text color for better contrast */
   }
 
   .white-button {
@@ -217,120 +350,127 @@
   }
 
   .rectangle-lines {
-    stroke: black; /* Black lines for better visibility */
+    stroke: black;
+    /* Black lines for better visibility */
   }
 }
 
-  
-  button {
-    padding: 1px 2px; /* Minimal button size for mobile */
-    font-size: 8px; /* Compact font size for buttons */
-  }
-  
-  /* Larger styles for PC (desktop) */
-  @media (min-width: 768px) {
-    .player-info-box, .player-info-box2 {
-      padding: 5px; /* Increased padding for desktop */
-      width: 160px; /* Increased width for desktop */
-      font-size: 14px; /* Larger font size for desktop */
-      right: 40px; /* Keep right aligned for desktop */
-      top: 533px;
-      right: 630px;
-    }
-  
-    .player-info-box2 {
-      right: 630px; /* Adjusted right position for Player 2 on desktop */
-      top: 128px;
-    }
-  
-    .player-info-item input[type="text"] {
-      width: 100px; /* Wider input fields for desktop */
-      font-size: 14px; /* Larger font size for input */
-    }
-  
-    button {
-      padding: 5px 10px; /* Increased button size for desktop */
-      font-size: 14px; /* Larger font size for buttons */
-    }
-  }
-  
-  .App {
-    display: flex;
-  }
-  
-  .side-header {
-    width: 250px;
-    background-color: #2e3b55;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    position: fixed;
-    height: 100vh;
-  }
-  
-  .logo img {
-    width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  .side-header button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #4a5d7d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: left;
-  }
-  
-  .sub-options button {
-    margin: 5px 20px;
-    width: calc(100% - 40px);
-  }
-  
-  .auth-buttons {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .play-options {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
-  
-  .play-options button {
-    background-color: #6c5ce7;
-    color: white;
-    margin-bottom: 10px;
-  }
-  
-  button:hover {
-    background-color: #576b95;
-  }
-  
-/* Base styles for Point Table (Panduv and Kauruv) */
-.counter-buttons {
-  position: absolute;
-  top: -9%;
-  left: 15%;
-  display: flex;
-  flex-direction: row;
-  gap: 200px; /* Space between buttons */
+
+button {
+  padding: 1px 2px;
+  /* Minimal button size for mobile */
+  font-size: 8px;
+  /* Compact font size for buttons */
 }
+
+/* Larger styles for PC (desktop) */
+@media (min-width: 768px) {
+
+  .player-info-box,
+  .player-info-box2 {
+    padding: 5px;
+    /* Increased padding for desktop */
+    width: 160px;
+    /* Increased width for desktop */
+    font-size: 14px;
+    /* Larger font size for desktop */
+    right: 40px;
+    /* Keep right aligned for desktop */
+    top: 533px;
+    right: 630px;
+  }
+
+  .player-info-box2 {
+    right: 630px;
+    /* Adjusted right position for Player 2 on desktop */
+    top: 128px;
+  }
+
+  .player-info-item input[type="text"] {
+    width: 100px;
+    /* Wider input fields for desktop */
+    font-size: 14px;
+    /* Larger font size for input */
+  }
+
+  button {
+    padding: 5px 10px;
+    /* Increased button size for desktop */
+    font-size: 14px;
+    /* Larger font size for buttons */
+  }
+}
+
+.App {
+  display: flex;
+}
+
+.side-header {
+  width: 250px;
+  background-color: #2e3b55;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: fixed;
+  height: 100vh;
+}
+
+.logo img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.side-header button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #4a5d7d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sub-options button {
+  margin: 5px 20px;
+  width: calc(100% - 40px);
+}
+
+.auth-buttons {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.play-options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.play-options button {
+  background-color: #6c5ce7;
+  color: white;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #576b95;
+}
+
+/* Base styles for Point Table (Panduv and Kauruv) */
 
 .king-count-button {
   padding: 8px 12px;
   font-size: 0.7rem;
   border: none;
   border-radius: 8px;
-  background-color: #d9534f; /* Customize your button color */
+  background-color: #d9534f;
+  /* Customize your button color */
   color: white;
 }
 
@@ -339,69 +479,37 @@
   font-size: 0.7rem;
   border: none;
   border-radius: 8px;
-  background-color: cadetblue; /* Customize your button color */
+  background-color: cadetblue;
+  /* Customize your button color */
   color: white;
 }
 
 /* Tablet and below (max-width: 768px) */
-@media (max-width: 768px) {
-  .counter-buttons {
-    top: -18%;
-    left: 12%;
-  }
-
-  .king-count-button,
-  .queen-count-button {
-    font-size: 0.7rem;
-    padding: 6px 10px;
-  }
-}
+@media (max-width: 768px) {}
 
 /* Mobile devices (max-width: 480px) */
-@media (max-width: 480px) {
-  .counter-buttons {
-    top: -22%;
-    left: 20%;
-    gap: 110px;
-  }
-
-  .king-count-button,
-  .queen-count-button {
-    font-size: 0.8rem;
-    padding: 5px 5px;
-  }
-}
+@media (max-width: 480px) {}
 
 /* Specific styles for 375x667 screen size */
-@media screen and (max-width: 375px) and (max-height: 667px) {
-  .counter-buttons {
-    top: -15%;
-    left: 8%;
-    gap: 120px; /* Adjust space between buttons */
-  }
-
-  .king-count-button,
-  .queen-count-button {
-    font-size: 0.6rem;
-    padding: 4px 8px;
-    border-radius: 6px; /* Slightly smaller buttons for compact screens */
-  }
-}
+@media screen and (max-width: 375px) and (max-height: 667px) {}
 
 
 /* Styles for the turn message */
 .turn-message {
   position: absolute;
-  top: 40%; /* Adjust the vertical position */
+  top: 40%;
+  /* Adjust the vertical position */
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Semi-transparent background */
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 1rem;
   text-align: center;
-  z-index: 1000; /* Ensure it appears above other elements */
+  z-index: 1000;
+  /* Ensure it appears above other elements */
   animation: fade-in-out 3s ease-in-out;
 }
 
@@ -410,12 +518,15 @@
   0% {
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   90% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -438,21 +549,38 @@
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   animation: balloon-animation 5s infinite, pulse-border 2s infinite ease-in-out;
-  z-index: 9999; /* Ensures it's on top of other elements */
+  z-index: 9999;
+  /* Ensures it's on top of other elements */
 }
 
 /* Balloon-like floating effect */
 @keyframes balloon-animation {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Pulse effect around the border for extra visibility */
 @keyframes pulse-border {
-  0% { box-shadow: 0px 0px 15px 5px yellow; }
-  50% { box-shadow: 0px 0px 30px 10px yellow; }
-  100% { box-shadow: 0px 0px 15px 5px yellow; }
+  0% {
+    box-shadow: 0px 0px 15px 5px yellow;
+  }
+
+  50% {
+    box-shadow: 0px 0px 30px 10px yellow;
+  }
+
+  100% {
+    box-shadow: 0px 0px 15px 5px yellow;
+  }
 }
 
 /* Responsive design */
@@ -473,8 +601,10 @@
 }
 
 .learn-page {
-  background-color: #0a0a0a; /* Darker black for a more sleek look */
-  color: #f4f4f4; /* Softer white for readability */
+  background-color: #0a0a0a;
+  /* Darker black for a more sleek look */
+  color: #f4f4f4;
+  /* Softer white for readability */
   padding: 60px 20px;
   min-height: 100vh;
   text-align: center;
@@ -485,7 +615,8 @@
   font-size: 3.5em;
   margin-bottom: 40px;
   font-family: 'Roboto', sans-serif;
-  color: #00ffff; /* Bright color for emphasis */
+  color: #00ffff;
+  /* Bright color for emphasis */
   letter-spacing: 1.5px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
@@ -497,7 +628,8 @@
 .section-title {
   font-size: 2.5em;
   margin-bottom: 25px;
-  color: #ff6347; /* Use tomato for headings */
+  color: #ff6347;
+  /* Use tomato for headings */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -577,7 +709,8 @@
     font-size: 2em;
   }
 
-  .article-text, .video-wrapper iframe {
+  .article-text,
+  .video-wrapper iframe {
     width: 90%;
   }
 
@@ -675,6 +808,7 @@
     opacity: 1;
     box-shadow: 0 0 10px rgb(233, 244, 21), 0 0 20px rgba(255, 0, 4, 0.8);
   }
+
   100% {
     opacity: 0.5;
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.6), 0 0 10px rgba(226, 237, 14, 0.923);
@@ -687,8 +821,55 @@
     opacity: 0;
     transform: scale(0.2);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex.flex-col {
+  flex-direction: column;
+}
+
+.d-flex.gap-2 {
+  gap: 8px;
+}
+
+.d-flex.gap-4 {
+  gap: 16px;
+}
+
+.d-flex.gap-8 {
+  gap: 32px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  padding: 50px;
+  gap: 1rem;
+  background: #2b2929;
+  border-radius: 15px;
+  outline: 2px solid yellow;
 }

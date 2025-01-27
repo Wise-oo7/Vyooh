@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { io } from 'socket.io-client';
 import './FindAPlayer.css';
+import OnlinePlay from './OnlinePlay';
 
 const socket = io('http://localhost:5000');
 
@@ -32,30 +33,32 @@ const FindAPlayer = () => {
   };
 
   return (
-    <div className="find-player-container">
-      <form className="find-player-form" onSubmit={(e) => e.preventDefault()}>
-        <h1>Find a Player</h1>
-        <label>
-          Your Mobile Number:
-          <input
-            type="tel"
-            value={player1}
-            onChange={(e) => setPlayer1(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Opponent Mobile Number:
-          <input
-            type="tel"
-            value={player2}
-            onChange={(e) => setPlayer2(e.target.value)}
-            required
-          />
-        </label>
-        <button onClick={handleSearch}>Search</button>
-      </form>
-    </div>
+    <>
+      <div className="find-player-container">
+        <form className="find-player-form" onSubmit={(e) => e.preventDefault()}>
+          <h1>Find a Player</h1>
+          <label>
+            Your Mobile Number:
+            <input
+              type="tel"
+              value={player1}
+              onChange={(e) => setPlayer1(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Opponent Mobile Number:
+            <input
+              type="tel"
+              value={player2}
+              onChange={(e) => setPlayer2(e.target.value)}
+              required
+            />
+          </label>
+          <button onClick={handleSearch}>Search</button>
+        </form>
+      </div>
+    </>
   );
 };
 

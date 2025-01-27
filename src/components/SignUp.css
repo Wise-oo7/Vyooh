@@ -1,39 +1,47 @@
 /* Container styles */
 .signup-container {
-    display: flex;
-    justify-content: center; /* Keep the container centered horizontally */
-    align-items: center;     /* Keep the container centered vertically */
-    min-height: 50vh;        /* Set the height to 50% of the viewport */
+    min-height: 400px;
     background: linear-gradient(to right, #6a11cb, #2575fc);
-    padding: 1rem;
+    padding: 60px;
     box-sizing: border-box;
-    margin-left: 13px; /* Slightly shift the container to the left */
+    width: 75vw;
+    max-width: 550px;
+    height: fit-content;
+    border-radius: 12px;
 }
 
 
 /* Form styles */
 .signup-form {
     background: #ffffff;
-    padding: 2.5rem;  /* Reduced padding for smaller box */
+    padding: 2.5rem;
+    /* Reduced padding for smaller box */
     border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Slightly bigger shadow */
-    max-width: 480px;  /* Decreased max-width for a smaller box */
-    width: 80%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    /* Slightly bigger shadow */
+    /* max-width: 480px; */
+    /* Decreased max-width for a smaller box */
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
 /* Heading styles */
 .signup-form h1 {
-    font-size: 2.2rem;  /* Slightly smaller font size */
-    margin-bottom: 1.5rem;  /* Reduced space below heading */
+    font-size: 2.2rem;
+    /* Slightly smaller font size */
+    margin-bottom: 1.5rem;
+    /* Reduced space below heading */
     color: #333333;
 }
 
 /* Label styles */
 .signup-form label {
     display: block;
-    margin-bottom: 1rem; /* Reduced margin */
-    font-size: 1.1rem;  /* Slightly smaller font size for labels */
+    margin-bottom: 1rem;
+    /* Reduced margin */
+    font-size: 1.1rem;
+    /* Slightly smaller font size for labels */
     color: #555555;
     text-align: left;
 }
@@ -41,11 +49,14 @@
 /* Input styles */
 .signup-form input {
     width: 100%;
-    padding: 0.9rem;  /* Reduced padding for input fields */
-    margin-top: 1rem;  /* Consistent margin */
+    padding: 0.9rem;
+    /* Reduced padding for input fields */
+    margin-top: 1rem;
+    /* Consistent margin */
     border: 1px solid #cccccc;
     border-radius: 5px;
-    font-size: 1.1rem;  /* Slightly smaller font size for input fields */
+    font-size: 1.1rem;
+    /* Slightly smaller font size for input fields */
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
@@ -59,13 +70,16 @@
 .signup-form button {
     background-color: #6a11cb;
     color: #ffffff;
-    font-size: 1.1rem;  /* Slightly smaller font size for the button */
-    padding: 0.9rem 1.3rem;  /* Reduced padding for button */
+    font-size: 1.1rem;
+    /* Slightly smaller font size for the button */
+    padding: 0.9rem 1.3rem;
+    /* Reduced padding for button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 1.5rem;  /* Reduced space between button and input */
+    margin-top: 1.5rem;
+    /* Reduced space between button and input */
     width: 100%;
 }
 
@@ -80,8 +94,12 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .signup-container {
+        width: 95vw;
+    }
+
     .signup-form {
-        padding: 1.5rem;
+        padding: 15px;
     }
 
     .signup-form h1 {
@@ -93,9 +111,16 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    .signup-container {
+        width: 100%;
+        height: 100%;
+    }
+
     .signup-form {
-        padding: 1.2rem;
+        width: 85vw;
+        height: 62vh;
+        padding: 35px;
     }
 
     .signup-form h1 {

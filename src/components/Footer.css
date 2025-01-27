@@ -9,7 +9,8 @@
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  background-color: #1e1e2d; /* Dark background for contrast */
+  background-color: #1e1e2d;
+  /* Dark background for contrast */
 }
 
 /* Support page container */
@@ -76,7 +77,8 @@ body {
 /* Message styling for feedback */
 .message {
   margin-top: 15px;
-  color: #00ff99; /* Success color */
+  color: #00ff99;
+  /* Success color */
   font-size: 1em;
 }
 
@@ -107,43 +109,56 @@ body {
 /* Base Styling */
 body {
   font-family: 'Arial', sans-serif;
-  color: #ffffff; /* Set text to pure white for readability */
-  background-color: #1e1e2d; /* Dark background for contrast */
-  line-height: 1.6; /* Improve readability */
+  color: #ffffff;
+  /* Set text to pure white for readability */
+  background-color: #1e1e2d;
+  /* Dark background for contrast */
+  line-height: 1.6;
+  /* Improve readability */
   margin: 0;
   padding: 0;
 }
 
 .about-page {
-  padding: 100px 20px; /* Increase padding for a spacious layout */
+  padding: 100px 20px;
+  /* Increase padding for a spacious layout */
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 
 /* Header Styling */
-h2, h3 {
-  color: yellow; /* White text for headers */
+h2,
+h3 {
+  color: yellow;
+  /* White text for headers */
   font-weight: bold;
-  text-transform: uppercase; /* Make headers uppercase for emphasis */
+  text-transform: uppercase;
+  /* Make headers uppercase for emphasis */
   margin-bottom: 30px;
-  letter-spacing: 1px; /* Add spacing for a clean look */
+  letter-spacing: 1px;
+  /* Add spacing for a clean look */
 }
 
 h2 {
-  font-size: 2em; /* Larger font size for main section headers */
+  font-size: 2em;
+  /* Larger font size for main section headers */
 }
 
 h3 {
-  font-size: 1.5em; /* Slightly smaller font size for subsection headers */
+  font-size: 1.5em;
+  /* Slightly smaller font size for subsection headers */
 }
 
 /* Paragraph Styling */
 p {
-  font-size: 1em; /* Standard font size for readability */
-  color: #dddddd; /* Slightly softer white for paragraph text */
+  font-size: 1em;
+  /* Standard font size for readability */
+  color: #dddddd;
+  /* Slightly softer white for paragraph text */
   margin-bottom: 20px;
-  text-align: justify; /* Align text for a polished look */
+  text-align: justify;
+  /* Align text for a polished look */
 }
 
 /* List Styling */
@@ -153,7 +168,8 @@ ul {
 }
 
 li {
-  background: rgba(0, 102, 204, 0.8); /* Subtle background color */
+  background: rgba(0, 102, 204, 0.8);
+  /* Subtle background color */
   color: #ffffff;
   padding: 15px;
   margin: 10px 0;
@@ -166,7 +182,8 @@ li {
   max-width: 80%;
   height: auto;
   display: block;
-  margin: 10px auto; /* Add space around image */
+  margin: 10px auto;
+  /* Add space around image */
   border-radius: 12px;
 }
 
@@ -178,21 +195,6 @@ li {
   display: block;
   margin: 0 auto;
   border-radius: 12px;
-}
-
-/* Footer Styling */
-.footer {
-  color: #ffffff;
-  font-size: 0.9em;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 8px 12px;
-  border-radius: 6px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  opacity: 0.85;
-  text-align: center;
-  z-index: 1000;
 }
 
 /* Responsive Adjustments */
@@ -230,18 +232,21 @@ li {
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  background-color: #1e1e2d; /* Dark background for contrast */
+  background-color: #1e1e2d;
+  /* Dark background for contrast */
 }
 
 /* Container for Privacy Policy content */
 .privacy-container {
-  padding: 80px 20px 60px; /* Spacing for top and bottom */
+  padding: 80px 20px 60px;
+  /* Spacing for top and bottom */
   max-width: 1000px;
   margin: 0 auto;
 }
 
 /* Headings */
-h1, h2 {
+h1,
+h2 {
   color: yellow;
   text-align: center;
   margin-bottom: 30px;
@@ -270,7 +275,8 @@ ul {
 }
 
 li {
-  background: rgba(0, 102, 204, 0.8); /* Blue background for contrast */
+  background: rgba(0, 102, 204, 0.8);
+  /* Blue background for contrast */
   color: white;
   padding: 10px;
   margin: 10px 0;
@@ -280,26 +286,31 @@ li {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .privacy-container {
-    padding: 60px 15px; /* Adjust padding for mobile */
+    padding: 60px 15px;
+    /* Adjust padding for mobile */
   }
 
-  h1, h2 {
-    font-size: 1.5em; /* Smaller font size on small screens */
+  h1,
+  h2 {
+    font-size: 1.5em;
+    /* Smaller font size on small screens */
   }
 
   li {
-    padding: 8px; /* Adjust padding in list items for smaller screens */
+    padding: 8px;
+    /* Adjust padding in list items for smaller screens */
   }
 }
 
 /* Footer styling */
 .footer {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  right: 0;
   color: white;
   font-size: 14px;
-  background-color: rgba(0, 0, 0, 0.6); /* Background for readability */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Background for readability */
   padding: 5px 10px;
   border-radius: 5px;
   opacity: 0.8;
@@ -307,13 +318,13 @@ li {
   z-index: 1000;
 }
 
-  
 
 
 
 
-  /* UserAgreement.css */
- /* General styling */
+
+/* UserAgreement.css */
+/* General styling */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -323,7 +334,8 @@ li {
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  background-color: #1e1e2d; /* Dark background for contrast */
+  background-color: #1e1e2d;
+  /* Dark background for contrast */
 }
 
 /* Container for User Agreement content */
@@ -364,12 +376,12 @@ body {
   }
 }
 
-  
 
 
 
 
-  /* Partners.css */
+
+/* Partners.css */
 /* General styling */
 * {
   box-sizing: border-box;
@@ -380,7 +392,8 @@ body {
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  background-color: #1e1e2d; /* Dark background for contrast */
+  background-color: #1e1e2d;
+  /* Dark background for contrast */
 }
 
 /* Container for Partners content */
@@ -449,11 +462,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   background-color: #f0f2f5;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
-  position: relative; /* Make the container a reference point for absolute positioning */
+  position: relative;
+  border-radius: 15px;
+  border: 2px solid yellow;
 }
 
 /* Customizable box with flexible positioning */
@@ -470,9 +485,12 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   /* Custom Positioning */
-  position: absolute; /* Allows positioning using top, left, right, bottom */
-  top: 30%;  /* Adjust the vertical position */
-  left: 5%; /* Adjust the horizontal position */
+  position: absolute;
+  /* Allows positioning using top, left, right, bottom */
+  top: 30%;
+  /* Adjust the vertical position */
+  left: 5%;
+  /* Adjust the horizontal position */
   /* Modify or add right/bottom as needed for custom layout */
 }
 
@@ -517,7 +535,8 @@ body {
   .play-box {
     width: 90%;
     padding: 30px 15px;
-    top: 10%; /* Adjust position for smaller screens */
+    top: 10%;
+    /* Adjust position for smaller screens */
     left: 5%;
   }
 
@@ -530,7 +549,8 @@ body {
 @media (max-width: 480px) {
   .play-box {
     padding: 20px 10px;
-    top: 30%; /* Further adjustment for mobile screens */
+    top: 30%;
+    /* Further adjustment for mobile screens */
     left: 5%;
   }
 
@@ -549,33 +569,49 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 20px; /* Space above the QR code */
-  text-align: center; /* Center the text below the image */
+  margin-top: 20px;
+  /* Space above the QR code */
+  text-align: center;
+  /* Center the text below the image */
 }
 
 /* Box around the QR code image */
 .qr-code-image {
-  width: 380px; /* Set width of the image */
-  height: 250px; /* Set height of the image */
-  object-fit: cover; /* Ensures the image fits within the box */
-  border-radius: 10px; /* Rounded corners for the image box */
-  border: 8px solid #000; /* Black border around the image */
-  padding: 10px; /* Padding inside the box */
-  background-color: #f8f8f8; /* Background color inside the box */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+  width: 380px;
+  /* Set width of the image */
+  height: 250px;
+  /* Set height of the image */
+  object-fit: cover;
+  /* Ensures the image fits within the box */
+  border-radius: 10px;
+  /* Rounded corners for the image box */
+  border: 8px solid #000;
+  /* Black border around the image */
+  padding: 10px;
+  /* Padding inside the box */
+  background-color: #f8f8f8;
+  /* Background color inside the box */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Light shadow effect */
 }
 
 /* Line below the QR code image */
 .qr-code-line {
-  width: 80%; /* Line width, adjust as needed */
-  border-top: 2px solid #000; /* Black line */
-  margin: 10px auto; /* Center the line with space around */
+  width: 80%;
+  /* Line width, adjust as needed */
+  border-top: 2px solid #000;
+  /* Black line */
+  margin: 10px auto;
+  /* Center the line with space around */
 }
 
 /* Optional: Styling for the text below the QR code */
 .qr-code-text {
   font-size: 14px;
-  color: #555; /* Lighter color for the text */
-  margin-top: 10px; /* Space above the text */
-  font-family: 'Arial', sans-serif; /* Set font */
+  color: #555;
+  /* Lighter color for the text */
+  margin-top: 10px;
+  /* Space above the text */
+  font-family: 'Arial', sans-serif;
+  /* Set font */
 }

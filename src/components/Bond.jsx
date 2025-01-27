@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import PlayerCount from "./PlayerCount";
 
 const Board = () => {
   const totalButtons = 24;
@@ -222,7 +223,9 @@ const Board = () => {
    }, [winner]);
  
    return (
-     <div className="rectangle-container Board-background">
+    <>
+      <PlayerCount kingRemovalCount={kingRemovalCount} queenRemovalCount={queenRemovalCount} kingTime={kingTime} queenTime={queenTime} />
+      <div className="rectangle-container Board-background">
        {buttons.map((btn, index) => (
          <button
            key={index}
@@ -244,11 +247,6 @@ const Board = () => {
            Remove
          </button>
        )}
- 
-       <div className="counter-buttons">
-         <button className="king-count-button">RedArmy🛡️Points | {kingRemovalCount} | {Math.floor(kingTime / 60)}:{String(kingTime % 60).padStart(2, '0')}</button>
-         <button className="queen-count-button">WhiteArmy️⚔️ Points | {queenRemovalCount} | {Math.floor(queenTime / 60)}:{String(queenTime % 60).padStart(2, '0')}</button>
-       </div>
  
        {winner && (
          <div className="winner-box">
@@ -301,6 +299,7 @@ const Board = () => {
          <line x1="50%" y1="80%" x2="50%" y2="65%" stroke="blue" strokeWidth="0.4" />
        </svg>
      </div>
+    </>
    );
  };
  
