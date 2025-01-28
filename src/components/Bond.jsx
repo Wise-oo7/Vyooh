@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import PlayerCount from "./PlayerCount";
+import WorldWar from "./WorldWar";
 
 const Board = () => {
   const totalButtons = 24;
@@ -224,7 +225,7 @@ const Board = () => {
  
    return (
     <>
-      <PlayerCount kingRemovalCount={kingRemovalCount} queenRemovalCount={queenRemovalCount} kingTime={kingTime} queenTime={queenTime} />
+      <WorldWar kingRemovalCount={kingRemovalCount} queenRemovalCount={queenRemovalCount} kingTime={kingTime} queenTime={queenTime} />
       <div className="rectangle-container Board-background">
        {buttons.map((btn, index) => (
          <button

@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="privacy-container">
       <h1 className="privacy-heading">Privacy Policy for Vyuh!</h1>
-      <p className="last-updated">Last Updated: [27/10/2024]</p>
+      <p className="last-updated">Last Updated: [10/2/2025]</p>
 
       <section className="policy-section">
         <p>Welcome to Vyuh!</p>

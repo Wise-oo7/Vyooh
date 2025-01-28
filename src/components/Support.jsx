@@ -60,6 +60,7 @@ const Support = () => {
         <h3>Contact Us</h3>
         <p>You can reach us via:</p>
         <p>WhatsApp: <a href="https://wa.me/916261292989" target="_blank" rel="noopener noreferrer">+91 6261292989</a></p>
+        <p>Call Us: <a href="#">+91-9303368482</a></p>
         <p>Email: <a href="mailto:thevyuha9@gmail.com">thevyuha9@gmail.com</a></p>
       </div>
 

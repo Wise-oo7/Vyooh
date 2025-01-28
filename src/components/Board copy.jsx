@@ -7,7 +7,7 @@ const Board = () => {
   const [buttons, setButtons] = useState(Array(totalButtons).fill({ symbol: null, color: "white", name: null }));
   const [kingCount, setKingCount] = useState(0);
   const [queenCount, setQueenCount] = useState(0);
-  const [isKingTurn, setIsKingTurn] = useState(true);
+  const [isKingTurn, setIsKingTurn] = useState(() => Math.random() < 0.5);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [goldenLines, setGoldenLines] = useState([]);
   const [pinkLines, setPinkLines] = useState([]);
@@ -21,6 +21,7 @@ const Board = () => {
   const [kingTime, setKingTime] = useState(0);
   const [queenTime, setQueenTime] = useState(0);
   const [winner, setWinner] = useState(null);
+
 
   const [removedPandavNames, setRemovedPandavNames] = useState([]);
   const [removedKauravNames, setRemovedKauravNames] = useState([]);
@@ -60,24 +61,52 @@ const Board = () => {
   // console.log(isKingTurn, "isKingTurn")
 
   const handleClick = (index) => {
-    console.log(index, "index")
+    console.log(index, "index");
     const audio = new Audio('/gt.mp3');
+
     setButtons((prevButtons) => {
       const newButtons = [...prevButtons];
       const current = newButtons[index];
-      console.log({ prevButtons })
-      console.log(selectedIndex === index, "cond 1")
-      console.log(current.symbol !== null && selectedIndex === null, "cond 2")
-      console.log(selectedIndex !== null && current.symbol === null, "cond 3")
-      console.log(kingCount < 9 - kingRemovals && isKingTurn, "cond 4")
-      console.log(queenCount < 9 - queenRemovals && !isKingTurn, "cond 5")
+
+
+      // Check if it's the player's turn
+      if (current.symbol === "P" && !isKingTurn) {
+        // Create and display the message
+        const messageDiv = document.createElement("div");
+        messageDiv.textContent = "Not Your Turn! It's कौरव⚔️ turn.";
+        messageDiv.className = "turn-message";
+        document.body.appendChild(messageDiv);
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+          messageDiv.remove();
+        }, 3000);
+        return prevButtons;
+      }
+      if (current.symbol === "K" && isKingTurn) {
+        // Create and display the message
+        const messageDiv = document.createElement("div");
+        messageDiv.textContent = "Not Your Turn! It's पांडव🛡️ turn.";
+        messageDiv.className = "turn-message";
+        document.body.appendChild(messageDiv);
+        // Remove the message after 3 seconds
+        setTimeout(() => {
+          messageDiv.remove();
+        }, 3000);
+
+        return prevButtons;
+      }
+
+      console.log({
+        prevButtons,
+        selectedIndex: selectedIndex === index,
+        currentSymbol: current.symbol,
+      });
+
       if (selectedIndex === index) {
         setSelectedIndex(null);
       } else if (current.symbol !== null && selectedIndex === null) {
         if (movementRules[index].some((move) => newButtons[move].symbol === null)) {
           setSelectedIndex(index);
-          console.log(current.symbol === "P")
-          console.log(current.symbol)
           setIsKingTurn(current.symbol === "P");
           audio.play(); // Play sound for King
         }
@@ -86,40 +115,34 @@ const Board = () => {
           newButtons[index] = newButtons[selectedIndex];
           newButtons[selectedIndex] = { symbol: null, color: "white", name: null };
           setSelectedIndex(null);
-          console.log(newButtons[index].symbol)
-          console.log(newButtons[index].symbol === "P")
           setIsKingTurn(newButtons[index].symbol === "K");
           audio.play(); // Play sound for King
         }
       } else if (kingCount < 9 - kingRemovals && isKingTurn) {
-        const availablePandavNames = pandavNames.filter(name => !removedPandavNames.includes(name));
+        const availablePandavNames = pandavNames.filter((name) => !removedPandavNames.includes(name));
         newButtons[index] = { symbol: "P", color: "sandybrown", name: availablePandavNames[kingCount] };
         setKingCount(kingCount + 1);
         setIsKingTurn(false);
         audio.play(); // Play sound for King
       } else if (queenCount < 9 - queenRemovals && !isKingTurn) {
-        const availableKauravNames = kauravNames.filter(name => !removedKauravNames.includes(name));
+        const availableKauravNames = kauravNames.filter((name) => !removedKauravNames.includes(name));
         newButtons[index] = { symbol: "K", color: "skyblue", name: availableKauravNames[queenCount] };
         setQueenCount(queenCount + 1);
         setIsKingTurn(true);
         audio.play(); // Play sound for Queen
       }
+
       setShowRemoveButton(false);
       return newButtons;
     });
   };
 
-
-
   const handleContextMenu = (event, index) => {
     event.preventDefault();
-
     // Prevent removing dice if the color is Yellow or seagreen
     const currentColor = getButtonColor(index);
     if (currentColor === "Yellow" || currentColor === "seagreen") return;
-
     if (buttons[index].symbol === null) return;
-
     const buttonRect = event.target.getBoundingClientRect();
     setRemoveButtonPosition({
       top: buttonRect.top + window.scrollY + buttonRect.height / 2,
@@ -129,12 +152,10 @@ const Board = () => {
     setRemoveButtonIndex(index);
   };
 
-
   const handleRemove = () => {
     setButtons((prevButtons) => {
       const newButtons = [...prevButtons];
       const removedPiece = newButtons[removeButtonIndex];
-
       // Add the removed name to the removed list
       if (removedPiece.symbol === "P") {
         setRemovedPandavNames((prev) => [...prev, removedPiece.name]);
@@ -147,14 +168,12 @@ const Board = () => {
         setQueenRemovals(queenRemovals + 1);
         setKingRemovalCount(kingRemovalCount + 1);
       }
-
       // Clear the button
       newButtons[removeButtonIndex] = { symbol: null, color: "white", name: null };
       setShowRemoveButton(false);
       return newButtons;
     });
   };
-
 
   const getButtonColor = (index) => {
     const isGolden = goldenLines.some((line) => line.includes(index));
@@ -171,7 +190,6 @@ const Board = () => {
   const checkForLines = () => {
     const newGoldenLines = [];
     const newPinkLines = [];
-
     linesToCheck.forEach((line) => {
       const [a, b, c] = line;
       if (buttons[a].symbol === "P" && buttons[b].symbol === "P" && buttons[c].symbol === "P") {
@@ -188,9 +206,9 @@ const Board = () => {
   // Check for winner
   useEffect(() => {
     if (kingRemovalCount >= 7) {
-      setWinner("Pandav🛡️");
+      setWinner("पांडव🛡️");
     } else if (queenRemovalCount >= 8) {
-      setWinner("Kaurav🧸");
+      setWinner("कौरव⚔️");
     }
   }, [kingRemovalCount, queenRemovalCount]);
 
@@ -230,7 +248,7 @@ const Board = () => {
 
         {winner && (
           <div className="winner-box">
-            🎉🎈 Congratulations! <strong>{winner}</strong> Won!🏆 🎉🎈🎉🎈🎈🎈🎉🎉🎈🎉🎈🎉🎈🎉🎈🎉🎈🎉
+            🎉🎈 Congratulations! <strong>{winner}</strong> Won ! 🏆 🎉🎈🎉🎈🎈🎉🎈🎉🎈🎉🎈🎉
           </div>
         )}
 
@@ -249,8 +267,20 @@ const Board = () => {
             className="blinking-light"
             style={{
               backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "Blue",
+              fontSize: "0.6rem",
+              fontWeight: "lighter",
+              height: "55px", // Adjust for better display
+              width: "200px", // Adjust for better display
+              borderRadius: "10px", // Optional: rounded corners
+              textAlign: "center",
             }}
-          ></div>
+          >
+            {isKingTurn ? "Turn is 🛡️ पांडव" : "Turn is ⚔️ कौरव"}
+          </div>
         </div>
 
         <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -270,7 +300,4 @@ const Board = () => {
     </>
   );
 };
-
 export default Board;
-
-

@@ -78,9 +78,9 @@ const SideHeader = () => {
           <Link to="/privacyPolicy">🔐 Privacy Policy</Link>
         </div>
         <div className="footer-icons">
-          <a href="https://www" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://x.com/Vyuha_?t=NKXgNuhpracHlIUOlXVfsw&s=08" target="_blank" rel="noopener noreferrer">X</a>
           <a href="https://www.youtube.com/@Vyuha-m1t" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.instagram.com/vyuh__?utm_source=qr&igsh=cmpmbnhxbnNjNDhq" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://www.discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
         </div>
         <div className="footer-copyright">

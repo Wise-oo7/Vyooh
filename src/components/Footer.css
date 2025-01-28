@@ -39,9 +39,10 @@ body {
 /* Query submission section */
 .query-box {
   background-color: #2e2e3e;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 100px;
   color: #eee;
 }
 
@@ -80,6 +81,7 @@ body {
   color: #00ff99;
   /* Success color */
   font-size: 1em;
+  margin-bottom: 50px;
 }
 
 /* Responsive adjustments */
@@ -249,7 +251,7 @@ h1,
 h2 {
   color: yellow;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .privacy-heading {
