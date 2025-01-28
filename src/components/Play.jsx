@@ -16,10 +16,10 @@ const Play = () => {
   return (
     <div className="play-container">
       <button className="play-button" onClick={handleMahabharatClick}>
-        🎲व्यूह🎲
+        🎲 व्यूह 🎲
       </button>
       <button className="play-button" onClick={handleSuperPowerClick}>
-        🏆ColdWar🏆
+        🏆 ColdWar 🏆
       </button>
     </div>
   );
