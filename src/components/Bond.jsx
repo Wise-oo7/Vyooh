@@ -70,7 +70,7 @@ const Board = () => {
    if (current.symbol === "P" && !isKingTurn) {
   // Create and display the message
     const messageDiv = document.createElement("div");
-    messageDiv.textContent = "Not Your Turn! It's Western Bloc🛡️ turn.";
+    messageDiv.textContent = "Not Your Turn! It's WesternAllies🛡️ turn.";
     messageDiv.className = "turn-message";
     document.body.appendChild(messageDiv);
 
@@ -84,7 +84,7 @@ const Board = () => {
     if (current.symbol === "K" && isKingTurn) {
   // Create and display the message
     const messageDiv = document.createElement("div");
-    messageDiv.textContent = "Not Your Turn! It's Eastern Bloc🌍 turn.";
+    messageDiv.textContent = "Not Your Turn! It's EasternAllies🌍 turn.";
     messageDiv.className = "turn-message";
     document.body.appendChild(messageDiv);
   // Remove the message after 3 seconds
@@ -209,9 +209,9 @@ const Board = () => {
    // Check for winner
    useEffect(() => {
      if (kingRemovalCount >= 7) {
-       setWinner("Eastern Bloc🌍");
+       setWinner("EasternAllies🌍");
      } else if (queenRemovalCount >= 8) {
-       setWinner("Western Bloc🛡️");
+       setWinner("WesternAllies🛡️");
      }
    }, [kingRemovalCount, queenRemovalCount]);
  
@@ -269,16 +269,16 @@ const Board = () => {
          <div
            className="blinking-light"
            style={{
-             backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
+             backgroundColor: isKingTurn ? "rgb(246, 118, 6)" : "rgb(24, 170, 228)",
              display: "flex",
              justifyContent: "center",
              alignItems: "center",
              color: "Black",
              fontSize: "0.6rem",
              fontWeight: "lighter",
-             height: "55px", // Adjust for better display
+             height: "65px", // Adjust for better display
              width: "200px", // Adjust for better display
-             borderRadius: "10px", // Optional: rounded corners
+             borderRadius: "5px", // Optional: rounded corners
              textAlign: "center",
            }}
          >
