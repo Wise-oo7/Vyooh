@@ -60,7 +60,7 @@ const Board = () => {
    
    const handleClick = (index) => {
      console.log(index, "index");
-     const audio = new Audio('/gt.mp3');
+     const audio = new Audio('gt.mp3');
     
      setButtons((prevButtons) => {
        const newButtons = [...prevButtons];
@@ -70,7 +70,7 @@ const Board = () => {
    if (current.symbol === "P" && !isKingTurn) {
   // Create and display the message
     const messageDiv = document.createElement("div");
-    messageDiv.textContent = "Not Your Turn! It's WhiteArmy️ turn.";
+    messageDiv.textContent = "Not Your Turn! It's Western Bloc🛡️ turn.";
     messageDiv.className = "turn-message";
     document.body.appendChild(messageDiv);
 
@@ -84,7 +84,7 @@ const Board = () => {
     if (current.symbol === "K" && isKingTurn) {
   // Create and display the message
     const messageDiv = document.createElement("div");
-    messageDiv.textContent = "Not Your Turn! It's RedArmy🛡️ turn.";
+    messageDiv.textContent = "Not Your Turn! It's Eastern Bloc🌍 turn.";
     messageDiv.className = "turn-message";
     document.body.appendChild(messageDiv);
   // Remove the message after 3 seconds
@@ -117,13 +117,13 @@ const Board = () => {
          }
        } else if (kingCount < 9 - kingRemovals && isKingTurn) {
          const availablePandavNames = pandavNames.filter((name) => !removedPandavNames.includes(name));
-         newButtons[index] = { symbol: "P", color: "sandybrown", name: availablePandavNames[kingCount] };
+         newButtons[index] = { symbol: "P", color: "rgb(246, 118, 6)", name: availablePandavNames[kingCount] };
          setKingCount(kingCount + 1);
          setIsKingTurn(false);
          audio.play(); // Play sound for King
        } else if (queenCount < 9 - queenRemovals && !isKingTurn) {
          const availableKauravNames = kauravNames.filter((name) => !removedKauravNames.includes(name));
-         newButtons[index] = { symbol: "K", color: "skyblue", name: availableKauravNames[queenCount] };
+         newButtons[index] = { symbol: "K", color: "rgb(24, 170, 228)", name: availableKauravNames[queenCount] };
          setQueenCount(queenCount + 1);
          setIsKingTurn(true);
          audio.play(); // Play sound for Queen
@@ -139,7 +139,7 @@ const Board = () => {
  
      // Prevent removing dice if the color is Yellow or seagreen
      const currentColor = getButtonColor(index);
-     if (currentColor === "Yellow" || currentColor === "seagreen") return;
+     if (currentColor === "sandybrown" || currentColor === "skyblue") return;
  
      if (buttons[index].symbol === null) return;
  
@@ -180,8 +180,8 @@ const Board = () => {
    const getButtonColor = (index) => {
      const isGolden = goldenLines.some((line) => line.includes(index));
      const isBurlywood = pinkLines.some((line) => line.includes(index));
-     if (isGolden) return "Yellow";
-     if (isBurlywood) return "seagreen";
+     if (isGolden) return "sandybrown";
+     if (isBurlywood) return "skyblue";
      return buttons[index].color;
    };
  
@@ -209,16 +209,16 @@ const Board = () => {
    // Check for winner
    useEffect(() => {
      if (kingRemovalCount >= 7) {
-       setWinner("EasternBloc🌍");
+       setWinner("Eastern Bloc🌍");
      } else if (queenRemovalCount >= 8) {
-       setWinner("WesternBloc🛡️");
+       setWinner("Western Bloc🛡️");
      }
    }, [kingRemovalCount, queenRemovalCount]);
  
    // Play audio when the winner is declared
    useEffect(() => {
      if (winner) {
-       const audio = new Audio('/claps.mp3');
+       const audio = new Audio('claps.mp3');
        audio.play();
      }
    }, [winner]);
@@ -287,17 +287,17 @@ const Board = () => {
        </div>
  
        <svg className="rectangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-         <rect x="5" y="5" width="90" height="90" fill="none" stroke="red" strokeWidth="0.4" />
-         <rect x="20" y="20" width="60" height="60" fill="none" stroke="red" strokeWidth="0.4" />
-         <rect x="35" y="35" width="30" height="30" fill="none" stroke="red" strokeWidth="0.4" />
-         <line x1="50%" y1="5%" x2="50%" y2="20%" stroke="blue" strokeWidth="0.4" />
-         <line x1="50%" y1="20%" x2="50%" y2="35%" stroke="blue" strokeWidth="0.4" />
-         <line x1="5%" y1="50%" x2="20%" y2="50%" stroke="blue" strokeWidth="0.4" />
-         <line x1="20%" y1="50%" x2="35%" y2="50%" stroke="blue" strokeWidth="0.4" />
-         <line x1="95%" y1="50%" x2="80%" y2="50%" stroke="blue" strokeWidth="0.4" />
-         <line x1="80%" y1="50%" x2="65%" y2="50%" stroke="blue" strokeWidth="0.4" />
-         <line x1="50%" y1="95%" x2="50%" y2="80%" stroke="blue" strokeWidth="0.4" />
-         <line x1="50%" y1="80%" x2="50%" y2="65%" stroke="blue" strokeWidth="0.4" />
+         <rect x="5" y="5" width="90" height="90" fill="none" stroke="rgb(134, 6, 246)" strokeWidth="0.5" />
+         <rect x="20" y="20" width="60" height="60" fill="none" stroke="rgb(134, 6, 246)" strokeWidth="0.5" />
+         <rect x="35" y="35" width="30" height="30" fill="none" stroke="rgb(134, 6, 246)" strokeWidth="0.5" />
+         <line x1="50%" y1="5%" x2="50%" y2="20%" stroke="Red" strokeWidth="0.5" />
+         <line x1="50%" y1="20%" x2="50%" y2="35%" stroke="Red" strokeWidth="0.5" />
+         <line x1="5%" y1="50%" x2="20%" y2="50%" stroke="Red" strokeWidth="0.5" />
+         <line x1="20%" y1="50%" x2="35%" y2="50%" stroke="Red" strokeWidth="0.5" />
+         <line x1="95%" y1="50%" x2="80%" y2="50%" stroke="Red" strokeWidth="0.5" />
+         <line x1="80%" y1="50%" x2="65%" y2="50%" stroke="Red" strokeWidth="0.5" />
+         <line x1="50%" y1="95%" x2="50%" y2="80%" stroke="Red" strokeWidth="0.5" />
+         <line x1="50%" y1="80%" x2="50%" y2="65%" stroke="Red" strokeWidth="0.5" />
        </svg>
      </div>
     </>

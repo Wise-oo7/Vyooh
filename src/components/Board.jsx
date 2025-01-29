@@ -62,7 +62,7 @@ const Board = () => {
 
   const handleClick = (index) => {
     console.log(index, "index");
-    const audio = new Audio('/gt.mp3');
+    const audio = new Audio('gt.mp3');
 
     setButtons((prevButtons) => {
       const newButtons = [...prevButtons];
@@ -120,13 +120,13 @@ const Board = () => {
         }
       } else if (kingCount < 9 - kingRemovals && isKingTurn) {
         const availablePandavNames = pandavNames.filter((name) => !removedPandavNames.includes(name));
-        newButtons[index] = { symbol: "P", color: "sandybrown", name: availablePandavNames[kingCount] };
+        newButtons[index] = { symbol: "P", color: "rgb(246, 118, 6)", name: availablePandavNames[kingCount] };
         setKingCount(kingCount + 1);
         setIsKingTurn(false);
         audio.play(); // Play sound for King
       } else if (queenCount < 9 - queenRemovals && !isKingTurn) {
         const availableKauravNames = kauravNames.filter((name) => !removedKauravNames.includes(name));
-        newButtons[index] = { symbol: "K", color: "skyblue", name: availableKauravNames[queenCount] };
+        newButtons[index] = { symbol: "K", color: "rgb(24, 170, 228)", name: availableKauravNames[queenCount] };
         setQueenCount(queenCount + 1);
         setIsKingTurn(true);
         audio.play(); // Play sound for Queen
@@ -141,7 +141,7 @@ const Board = () => {
     event.preventDefault();
     // Prevent removing dice if the color is Yellow or seagreen
     const currentColor = getButtonColor(index);
-    if (currentColor === "Yellow" || currentColor === "seagreen") return;
+    if (currentColor === "sandybrown" || currentColor === "skyblue") return;
     if (buttons[index].symbol === null) return;
     const buttonRect = event.target.getBoundingClientRect();
     setRemoveButtonPosition({
@@ -178,8 +178,8 @@ const Board = () => {
   const getButtonColor = (index) => {
     const isGolden = goldenLines.some((line) => line.includes(index));
     const isBurlywood = pinkLines.some((line) => line.includes(index));
-    if (isGolden) return "Yellow";
-    if (isBurlywood) return "seagreen";
+    if (isGolden) return "sandybrown";
+    if (isBurlywood) return "skyblue";
     return buttons[index].color;
   };
 
@@ -215,7 +215,7 @@ const Board = () => {
   // Play audio when the winner is declared
   useEffect(() => {
     if (winner) {
-      const audio = new Audio('/claps.mp3');
+      const audio = new Audio('claps.mp3');
       audio.play();
     }
   }, [winner]);

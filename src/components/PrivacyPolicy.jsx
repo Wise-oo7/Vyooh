@@ -94,7 +94,7 @@ const PrivacyPolicy = () => {
         <h2>Contact Us</h2>
         <p>
           If you have any questions regarding this Privacy Policy or wish to seek permission to use any part of Vyuh’s content,
-          please contact us at [shanatpandey44@gmail.com].
+          please contact us at [thevyuha9@gmail.com].
         </p>
       </section>
     </div>

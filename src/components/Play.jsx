@@ -61,7 +61,7 @@ const Play = () => {
           <div className="modal-box">
             <h2>Choose Your Role</h2>
             <button onClick={() => handleColdWarRoleSelect('Western Bloc')} className="role-button">
-              Western Bloc 🌍
+              Western Bloc 🛡️
             </button>
             <button onClick={() => handleColdWarRoleSelect('Eastern Bloc')} className="role-button">
               Eastern Bloc 🌍

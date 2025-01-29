@@ -76,9 +76,9 @@
 /* Main container for the rectangles */
 .rectangle-container {
   position: relative;
-  width: 90vw;
+  width: 99vw;
   max-width: 650px;
-  height: 90vw;
+  height: 130vw;
   max-height: 520px;
   margin: 25px auto;
   display: flex;
@@ -469,7 +469,7 @@ button:hover {
   font-size: 0.7rem;
   border: none;
   border-radius: 8px;
-  background-color: #d9534f;
+  background-color: rgb(246, 118, 6);
   /* Customize your button color */
   color: white;
 }
@@ -479,7 +479,7 @@ button:hover {
   font-size: 0.7rem;
   border: none;
   border-radius: 8px;
-  background-color: cadetblue;
+  background-color: rgb(24, 170, 228);
   /* Customize your button color */
   color: white;
 }
