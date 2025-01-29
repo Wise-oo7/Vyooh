@@ -617,3 +617,40 @@ body {
   font-family: 'Arial', sans-serif;
   /* Set font */
 }
+
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background-color: rgb(227, 45, 45);
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.role-button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.role-button:hover {
+  background-color: #45a049;
+}

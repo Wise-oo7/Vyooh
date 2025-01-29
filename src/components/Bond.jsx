@@ -25,8 +25,8 @@ const Board = () => {
 
   const [removedPandavNames, setRemovedPandavNames] = useState([]);
   const [removedKauravNames, setRemovedKauravNames] = useState([]);
-  const pandavNames = ["RUSSIA", "INDIA", "CHINA", "SOUTH KOREA", "JAPAN", "SAUDI ARABIA", "NEPAL", "INDONE SIA", "IRAN"];   
-  const kauravNames = ["UNITED STATES", "CANADA", "FRANCE", "UNITED KING DOM", "GER MANY", "ITALY", "TURKEY", "SPAIN", "POLAND"];
+  const pandavNames = ["RUSSIA", "CHINA", "INDIA",  "Roma nia", "Poland", "Hungary", "North Korea", "INDO NESIA", "Egypt"];   
+  const kauravNames = ["UNITED STATES", "CANADA", "FRANCE", "UNITED KING DOM", "GER MANY", "ITALY", "Austra lia", "South Korea", "Japan"];
 
   const movementRules = {
     0: [1, 3], 1: [0, 2, 9], 2: [1, 4], 3: [0, 11, 5], 4: [2, 7, 12],
@@ -209,9 +209,9 @@ const Board = () => {
    // Check for winner
    useEffect(() => {
      if (kingRemovalCount >= 7) {
-       setWinner("RedArmy🛡️");
+       setWinner("EasternBloc🌍");
      } else if (queenRemovalCount >= 8) {
-       setWinner("WhiteArmy️⚔️");
+       setWinner("WesternBloc🛡️");
      }
    }, [kingRemovalCount, queenRemovalCount]);
  
@@ -282,7 +282,7 @@ const Board = () => {
              textAlign: "center",
            }}
          >
-           {isKingTurn ? "Turn is 🛡️ RedArmy" : "Turn is ⚔️ WhiteArmy️"}
+           {isKingTurn ? "Turn is 🛡️ Eastern Bloc" : "Turn is ⚔️ Western Bloc"}
          </div>
        </div>
  

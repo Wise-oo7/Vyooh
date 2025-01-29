@@ -5,7 +5,7 @@ const Home = () => {
     const navigate = useNavigate();
     return (
         <div className='d-flex flex-col'>
-            <img src="D.webp" alt="Custom Content" className="responsive-image" />
+            <img src="D.jpg" alt="Custom Content" className="responsive-image" />
             <button className="play-button" onClick={() => navigate("/play")}>
                 🏆 Play Now 🏆
             </button>

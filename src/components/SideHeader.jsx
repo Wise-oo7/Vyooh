@@ -34,11 +34,11 @@ const SideHeader = () => {
     <div className={`side-header ${showMenu ? 'expanded' : 'collapsed'}`}>
       <div className="hamburger-icon" onClick={toggleMenu}></div>
       <>
-        <span onClick={() => navigate('/')}>
-          <div className="vyuh-logo">
+        <div className="vyuh-logo">
+          <Link to="/">
             <img src="./h.PNG" alt="Vyuh Logo" className="logo-image" />
-          </div>
-        </span>
+          </Link>
+        </div>
         <div className="menu-options">
           <div
             className="menu-item"

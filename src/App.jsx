@@ -32,7 +32,7 @@ const App = () => {
     <div className="App">
       <SideHeader />
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="play" element={<Play />} />
           <Route path="playOnline" element={<OnlinePlay />} />
@@ -53,7 +53,7 @@ const App = () => {
 };
 
 const AppWrapper = () => (
-  <Router>
+  <Router basename="/Vyooh/">
     <App />
   </Router>
 );

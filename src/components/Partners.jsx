@@ -38,7 +38,7 @@ const Partners = () => {
 
       {/* QR Code Image below the Donate Now button */}
       <div className="qr-code-container">
-        <img src="/Donate.jpg" alt="QR Code for Donation" className="qr-code-image" />
+        <img src="Donate.jpg" alt="QR Code for Donation" className="qr-code-image" />
       </div>
       <p className="contact-info">-----</p>
       <p className="contact-info">-----</p>

@@ -4,7 +4,15 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/Vyooh/',
+  build: {
+    rollupOptions: {
+      input: 'index.html',
+    },
+  },
   server: {
-    port: 3000, // Change the port to 3000 or any other port
+    fs: {
+      strict: false,
+    },
   },
 });
