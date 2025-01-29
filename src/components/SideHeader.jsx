@@ -60,17 +60,6 @@ const SideHeader = () => {
           </div>
         </div>
       </>
-      {showPrivacyModal && (
-        <div className="privacy-modal">
-          <div className="modal-content">
-            <h2>Privacy Policy Acceptance</h2>
-            <p>
-              To continue using this site, you must accept our Privacy Policy. Please review it before proceeding.
-            </p>
-            <button onClick={handleAcceptPrivacyPolicy}>Accept Privacy Policy</button>
-          </div>
-        </div>
-      )}
       <footer className="footer">
         <div className="footer-text">
           <Link to="/support">📥 Support</Link> |
