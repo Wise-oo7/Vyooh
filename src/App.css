@@ -105,7 +105,7 @@
 .rectangle-button {
   position: absolute;
   width: 20px;
-  height: 30px;
+  height: 40px;
   background-color: white;
   border: 1px solid black;
   font-size: 13px;
@@ -465,20 +465,20 @@ button:hover {
 /* Base styles for Point Table (Panduv and Kauruv) */
 
 .king-count-button {
-  padding: 8px 12px;
-  font-size: 0.7rem;
+  padding: 12px 17px;
+  font-size: 0.9rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: rgb(246, 118, 6);
   /* Customize your button color */
   color: white;
 }
 
 .queen-count-button {
-  padding: 8px 12px;
-  font-size: 0.7rem;
+  padding: 12px 17px;
+  font-size: 0.9rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: rgb(24, 170, 228);
   /* Customize your button color */
   color: white;
