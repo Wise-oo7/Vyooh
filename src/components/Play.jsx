@@ -39,6 +39,10 @@ const Play = () => {
       <button className="play-button" onClick={handleSuperPowerClick}>
         🏆 ColdWar 🏆
       </button>
+      <button className="play-button" onClick={() => window.location.href = "https://youtu.be/UDyBVu64tm0"}>
+      🏆 How to Play 🎮
+      </button>
+
 
       {/* Vyuh Role Selection Modal */}
       {showVyuhModal && (
@@ -46,7 +50,7 @@ const Play = () => {
           <div className="modal-box">
             <h2>Choose Your Role</h2>
             <button onClick={() => handleVyuhRoleSelect('Pandav')} className="role-button">
-              पांडव🛡️
+              पांडव 🛡️
             </button>
             <button onClick={() => handleVyuhRoleSelect('Kaurav')} className="role-button">
               कौरव ⚔️
@@ -60,11 +64,11 @@ const Play = () => {
         <div className="modal-overlay">
           <div className="modal-box">
             <h2>Choose Your Role</h2>
-            <button onClick={() => handleColdWarRoleSelect('Western Bloc')} className="role-button">
-              Western Bloc 🛡️
+            <button onClick={() => handleColdWarRoleSelect('Western Allies')} className="role-button">
+              Western Allies🛡️
             </button>
-            <button onClick={() => handleColdWarRoleSelect('Eastern Bloc')} className="role-button">
-              Eastern Bloc 🌍
+            <button onClick={() => handleColdWarRoleSelect('Eastern Allies')} className="role-button">
+              Eastern Allies🌍
             </button>
           </div>
         </div>

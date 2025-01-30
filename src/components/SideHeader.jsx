@@ -73,7 +73,9 @@ const SideHeader = () => {
           <a href="https://www.discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
         </div>
         <div className="footer-copyright">
-          thevyuh.com © 2024
+        <a href="" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+         thevyuh.com
+        </a> © 2024
         </div>
       </footer>
     </div>

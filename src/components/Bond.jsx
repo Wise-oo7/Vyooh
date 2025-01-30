@@ -209,9 +209,9 @@ const Board = () => {
    // Check for winner
    useEffect(() => {
      if (kingRemovalCount >= 7) {
-       setWinner("EasternAllies🌍");
-     } else if (queenRemovalCount >= 8) {
-       setWinner("WesternAllies🛡️");
+       setWinner("Eastern Allies🌍");
+     } else if (queenRemovalCount >= 7) {
+       setWinner("Western Allies🛡️");
      }
    }, [kingRemovalCount, queenRemovalCount]);
  
@@ -282,7 +282,7 @@ const Board = () => {
              textAlign: "center",
            }}
          >
-           {isKingTurn ? "Turn is 🛡️ Eastern Bloc" : "Turn is ⚔️ Western Bloc"}
+           {isKingTurn ? "Turn is 🛡️ Eastern Allies" : "Turn is ⚔️ Western Allies"}
          </div>
        </div>
  
