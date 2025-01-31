@@ -25,8 +25,8 @@ const Board = () => {
 
   const [removedPandavNames, setRemovedPandavNames] = useState([]);
   const [removedKauravNames, setRemovedKauravNames] = useState([]);
-  const pandavNames = ["RUSSIA", "CHINA", "INDIA",  "Roma nia", "Poland", "Hungary", "North Korea", "INDO NESIA", "Egypt"];   
-  const kauravNames = ["UNITED STATES", "CANADA", "FRANCE", "UNITED KING DOM", "GER MANY", "ITALY", "Austra lia", "South Korea", "Japan"];
+  const pandavNames = ["🇷🇺 RUSSIA", "🇨🇳 CHINA", "🇮🇳 INDIA",  "🇷🇴 Roma nia", "🇵🇱 Poland", "🇭🇺 Hungary", "🇰🇵 North Korea", "🇮🇩 INDO NESIA", "🇪🇬 Egypt"];   
+  const kauravNames = ["🇺🇸 UNITED STATES", "🇨🇦 CANADA", "🇫🇷 FRANCE", "🇬🇧 UNITED KING DOM", "🇩🇪 GER MANY", "🇮🇹 ITALY", "🇦🇺 Austra lia", "🇰🇷 South Korea", "🇯🇵 Japan"];
 
   const movementRules = {
     0: [1, 3], 1: [0, 2, 9], 2: [1, 4], 3: [0, 11, 5], 4: [2, 7, 12],

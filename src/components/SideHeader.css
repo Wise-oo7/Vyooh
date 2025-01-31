@@ -194,14 +194,14 @@
 /* Footer text links */
 .footer-text {
   text-align: center;
-  margin-bottom: 5px; /* Adjusted margin for better spacing */
-  font-size: 14px; /* Slightly larger font size */
+  margin-bottom: 3px; /* Adjusted margin for better spacing */
+  font-size: 12px; /* Slightly larger font size */
 }
 
 .footer-text a {
   color: #fff; /* White color for links */
   text-decoration: none;
-  margin: 0 10px; /* Adjusted margin for better spacing */
+  margin: 0 5px; /* Adjusted margin for better spacing */
   transition: color 0.3s ease;
 }
 
@@ -214,14 +214,14 @@
 .footer-icons {
   display: flex;
   justify-content: center;
-  margin-bottom: 5px; /* Adjusted margin for better spacing */
-  gap: 45px; /* Space between icons */
+  margin-bottom: 2px; /* Adjusted margin for better spacing */
+  gap: 25px; /* Space between icons */
 }
 
 .footer-icons a {
   color: #fff; /* Default icon color */
   text-decoration: none;
-  font-size: 20px; /* Larger icon size */
+  font-size: 15px; /* Larger icon size */
   transition: all 0.3s ease;
 }
 

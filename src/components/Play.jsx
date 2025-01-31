@@ -40,13 +40,15 @@ const Play = () => {
         🏆 ColdWar 🏆
       </button>
       <button className="play-button" onClick={() => window.location.href = "https://youtu.be/UDyBVu64tm0"}>
-      🏆 How to Play 🎮
+        🏆 How to Play 🎮
       </button>
       {/* Vyuh Role Selection Modal */}
       {showVyuhModal && (
         <div className="modal-overlay">
           <div className="modal-box">
             <h2>Choose Your Role</h2>
+
+            {/* Pandav Section */}
             <button onClick={() => handleVyuhRoleSelect('Pandav')} className="role-button">
               पांडव 🛡️
             </button>
@@ -54,9 +56,13 @@ const Play = () => {
               <p style={{ color: 'yellow', fontWeight: 'bold', marginBottom: '10px' }}>
                 आपके 9 योद्धा ये हैं:
               </p>
-              <small>युधिष्ठिर, अर्जुन, भीम, नकुल, सहदेव, अभिमन्यु, धृष्टद्युम्न, सत्यकी, घटोत्कच</small>
+              <small>
+                <span>👑 युधिष्ठिर</span>, <span>🏹 अर्जुन</span>, <span>💪 भीम</span>, <span>⚔️ नकुल</span>, <span>🛡️ सहदेव</span>, <span>🔥 अभिमन्यु</span>, <span>🎯 धृष्टद्युम्न</span>, <span>🪓 सत्यकी</span>, <span>👹 घटोत्कच</span>
+              </small>
             </div>
             <hr className="role-separator" />
+
+            {/* Kaurav Section */}
             <button onClick={() => handleVyuhRoleSelect('Kaurav')} className="role-button">
               कौरव ⚔️
             </button>
@@ -64,7 +70,9 @@ const Play = () => {
               <p style={{ color: 'yellow', fontWeight: 'bold', marginBottom: '10px' }}>
                 आपके 9 योद्धा ये हैं:
               </p>
-              <small>भीष्म, द्रोणाचार्य, कर्ण, अश्वत्थामा, कृपाचार्य, कृतवर्मा, दुर्योधन, दुशासन, युयुत्सु</small>
+              <small>
+                <span>🛡️ भीष्म</span>, <span>🎓 द्रोणाचार्य</span>, <span>🔥 कर्ण</span>, <span>🥶 अश्वत्थामा</span>, <span>🗡 कृपाचार्य</span>, <span>🔪 कृतवर्मा</span>, <span>🎭 दुर्योधन</span>, <span>🥻 दुशासन</span>, <span>🎃 युयुत्सु</span>
+              </small>
             </div>
           </div>
         </div>

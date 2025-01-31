@@ -28,7 +28,7 @@ const Home = () => {
                         <p>The divine charioteer, philosopher, and embodiment of love and wisdom. His teachings in the Bhagavad Gita illuminate the path of righteousness and devotion.</p>
                     </div>
                     <div className="warrior-card">
-                        <img src="Arjun.jpg" alt="Arjuna" className="warrior-image" />
+                        <img src="Arjuna.jpg" alt="Arjuna" className="warrior-image" />
                         <h3>Arjun</h3>
                         <p>Arjuna, the greatest archer of the Mahabharata, was a master of archery and warfare, blessed with divine weapons and unparalleled skill. Trained by Guru Dronacharya and guided by Lord Krishna✨</p>
 
