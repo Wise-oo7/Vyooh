@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './SideHeader.css';
 import OnlinePlay from './OnlinePlay';
 import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXTwitter, faYoutube, faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 const SideHeader = () => {
   const [showMenu, setShowMenu] = useState(true);
@@ -67,15 +69,23 @@ const SideHeader = () => {
           <Link to="/privacyPolicy">🔐 Privacy Policy</Link>
         </div>
         <div className="footer-icons">
-          <a href="https://x.com/Vyuha_?t=NKXgNuhpracHlIUOlXVfsw&s=08" target="_blank" rel="noopener noreferrer">X</a>
-          <a href="https://www.youtube.com/@Vyuha-m1t" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://www.instagram.com/vyuh__?utm_source=qr&igsh=cmpmbnhxbnNjNDhq" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://x.com/Vyuha_?t=NKXgNuhpracHlIUOlXVfsw&s=08" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faXTwitter} /> {/* X (Twitter) icon */}
+          </a>
+          <a href="https://www.youtube.com/@Vyuha-m1t" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faYoutube} /> {/* YouTube icon */}
+          </a>
+          <a href="https://www.instagram.com/vyuh__?utm_source=qr&igsh=cmpmbnhxbnNjNDhq" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faInstagram} /> {/* Instagram icon */}
+          </a>
+          <a href="https://www.discord.com" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faDiscord} /> {/* Discord icon */}
+          </a>
         </div>
         <div className="footer-copyright">
-        <a href="" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-         thevyuh.com
-        </a> © 2024
+          <a href="" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+            thevyuh.com
+          </a> © 2024
         </div>
       </footer>
     </div>

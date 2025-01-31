@@ -42,8 +42,6 @@ const Play = () => {
       <button className="play-button" onClick={() => window.location.href = "https://youtu.be/UDyBVu64tm0"}>
       🏆 How to Play 🎮
       </button>
-
-
       {/* Vyuh Role Selection Modal */}
       {showVyuhModal && (
         <div className="modal-overlay">
@@ -52,9 +50,22 @@ const Play = () => {
             <button onClick={() => handleVyuhRoleSelect('Pandav')} className="role-button">
               पांडव 🛡️
             </button>
+            <div className="role-names">
+              <p style={{ color: 'yellow', fontWeight: 'bold', marginBottom: '10px' }}>
+                आपके 9 योद्धा ये हैं:
+              </p>
+              <small>युधिष्ठिर, अर्जुन, भीम, नकुल, सहदेव, अभिमन्यु, धृष्टद्युम्न, सत्यकी, घटोत्कच</small>
+            </div>
+            <hr className="role-separator" />
             <button onClick={() => handleVyuhRoleSelect('Kaurav')} className="role-button">
               कौरव ⚔️
             </button>
+            <div className="role-names">
+              <p style={{ color: 'yellow', fontWeight: 'bold', marginBottom: '10px' }}>
+                आपके 9 योद्धा ये हैं:
+              </p>
+              <small>भीष्म, द्रोणाचार्य, कर्ण, अश्वत्थामा, कृपाचार्य, कृतवर्मा, दुर्योधन, दुशासन, युयुत्सु</small>
+            </div>
           </div>
         </div>
       )}
@@ -64,12 +75,31 @@ const Play = () => {
         <div className="modal-overlay">
           <div className="modal-box">
             <h2>Choose Your Role</h2>
-            <button onClick={() => handleColdWarRoleSelect('Western Allies')} className="role-button">
-              Western Allies🛡️
-            </button>
+            {/* Eastern Allies Section */}
             <button onClick={() => handleColdWarRoleSelect('Eastern Allies')} className="role-button">
               Eastern Allies🌍
             </button>
+            <div className="role-names">
+              <p style={{ color: 'yellow', fontWeight: 'bold', marginBottom: '10px' }}>
+                Your nine dices are this:
+              </p>
+              <small>
+                🇷🇺 RUSSIA, 🇨🇳 CHINA, 🇮🇳 INDIA, 🇷🇴 ROMANIA, 🇵🇱 POLAND, 🇭🇺 HUNGARY, 🇰🇵 NORTH KOREA, 🇮🇩 INDONESIA, 🇪🇬 EGYPT
+              </small>
+            </div>
+            <hr className="role-separator" />
+            {/* Western Allies Section */}
+            <button onClick={() => handleColdWarRoleSelect('Western Allies')} className="role-button">
+              Western Allies🛡️
+            </button>
+            <div className="role-names">
+              <p style={{ color: 'yellow', fontWeight: 'bold', marginBottom: '10px' }}>
+                Your nine dices are this:
+              </p>
+              <small>
+                🇺🇸 UNITED STATES, 🇨🇦 CANADA, 🇫🇷 FRANCE, 🇬🇧 UNITED KINGDOM, 🇩🇪 GERMANY, 🇮🇹 ITALY, 🇦🇺 AUSTRALIA, 🇰🇷 SOUTH KOREA, 🇯🇵 JAPAN
+              </small>
+            </div>
           </div>
         </div>
       )}
