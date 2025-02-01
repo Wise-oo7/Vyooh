@@ -1,28 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Footer.css'; // Import the separate CSS file
 
 const Partners = () => {
-  const handleDonateClick = () => {
+  // useEffect(() => {
+  //   let btn = document.querySelector(".partners-button")
+  //   btn?.click()
+  // }, [])
+  const handleDonateClick = (e) => {
     // Check if the user is on mobile
     const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-
+    console.log(isMobile)
     if (isMobile) {
       // Ask user which payment method they prefer
-      const paymentMethod = window.prompt(
-        "Donate via:\n1️⃣ Google Pay (Type 'G')\n2️⃣ PhonePe (Type 'P')",
-        "G"
-      );
+      // const paymentMethod = window.prompt(
+      //   "Donate via:\n1️⃣ Google Pay (Type 'G')\n2️⃣ PhonePe (Type 'P')",
+      //   "G"
+      // );
 
+      // console.log(e?.isTrusted,"e?.target?.isTrusted")
+      // e = { ...e, isTrusted: true }
       let upiURL = "";
 
-      if (paymentMethod?.toUpperCase() === "G") {
-        upiURL = `upi://pay?pa=shanatpandey.5-2@okaxis&pn=Vyuh&cu=INR`;
-      } else if (paymentMethod?.toUpperCase() === "P") {
-        upiURL = `upi://pay?pa=9644692482-2@ibl&pn=Vyuh&cu=INR`;
-      } else {
-        alert("Invalid option! Please type 'G' for Google Pay or 'P' for PhonePe.");
-        return;
-      }
+      // if (paymentMethod?.toUpperCase() === "G") {
+      // upiURL = `upi://pay?pa=shanatpandey.5-2@okaxis&pn=Vyuh&cu=INR`;
+      // } else if (paymentMethod?.toUpperCase() === "P") {
+      upiURL = `upi://pay?pa=9644692482-2@ibl&pn=Vyuh&cu=INR`;
+      // } else {
+      //   alert("Invalid option! Please type 'G' for Google Pay or 'P' for PhonePe.");
+      //   return;
+      // }
 
       // Open the UPI payment link for mobile users
       window.open(upiURL, '_blank');
@@ -48,15 +54,11 @@ const Partners = () => {
         Your support means the world to us and motivates us to keep pushing forward. Thank you for believing in us and 
         for being a vital part of our journey. Let’s make Vyuh’s impact unforgettable, together!
       </p>
-      <button onClick={handleDonateClick} className="partners-button">Donate Now</button>
 
-      {/* QR Code Image below the Donate Now button */}
-      <div className="qr-code-container">
-        <img src="Donate.jpg" alt="QR Code for Donation" className="qr-code-image" />
-      </div>
-      <p style={{ textAlign: "center" }}>  </p>
-      <p style={{ textAlign: "center" }}>😊 Thanks a lot ✨✨✨</p>
-      <p style={{ textAlign: "center" }}>  </p>
+      <button onClick={handleDonateClick} className="partners-button">Donate Now</button>
+      <p style={{ textAlign: "center" }}> </p>
+      <p style={{ textAlign: "center" }}>😊Thanks a lot!✨</p>
+      <p style={{ textAlign: "center" }}> </p>
     </div>
   );
 };
