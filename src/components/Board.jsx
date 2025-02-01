@@ -266,7 +266,7 @@ const Board = () => {
           <div
             className="blinking-light"
             style={{
-              backgroundColor: isKingTurn ? "sandybrown" : "skyblue",
+              backgroundColor: isKingTurn ? "rgb(246, 118, 6)" : "rgb(24, 170, 228",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",

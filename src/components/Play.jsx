@@ -37,7 +37,7 @@ const Play = () => {
         🎲 व्यूह (Vyuh) 🎲
       </button>
       <button className="play-button" onClick={handleSuperPowerClick}>
-        🏆 ColdWar 🏆
+        🏆 Cold War 🏆
       </button>
       <button className="play-button" onClick={() => window.location.href = "https://youtu.be/UDyBVu64tm0"}>
         🏆 How to Play 🎮
