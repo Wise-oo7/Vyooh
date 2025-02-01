@@ -27,20 +27,20 @@ body {
 /* Hero Section */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    50% { background-position: 100% 60%; }
+    100% { background-position: 0% 60%; }
 }
 
 .hero-section {
-    background: linear-gradient(-45deg, #043613, #798109, #340663, #00e07f); /* Luxurious gradient */
-    background-size: 200% 200%;
+    background: linear-gradient(-45deg, #eed7075c, #798109, #340663, #00e07f); /* Luxurious gradient */
+    background-size: 300% 300%;
     animation: gradientAnimation 10s ease infinite;
     position: relative;
-    min-height: 30vh; /* Small height */
+    min-height: 40vh; /* Small height */
     width: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 53px; /* Moves section lower */
-    padding: 20px; /* Adds inner space */
+    padding: 50px; /* Adds inner space */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@ body {
     font-weight: bold;
     padding: 10px 20px;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -92,21 +92,21 @@ body {
 
 .section-title {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
 }
 
 .warriors-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 3.5rem;
 }
 
 .warrior-card {
     background-color: #34495e;
     padding: 1rem;
     border-radius: 10px;
-    width: 150px;
+    width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -128,12 +128,12 @@ body {
 
 /* War Scene Section */
 .war-scene-section {
-    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    background: linear-gradient(-45deg, hwb(347 18% 8% / 0.961), #3c3d21, #2c1147, #31ec9b); 
     color: white;
 }
 
 .war-scene-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -161,31 +161,38 @@ body {
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2rem;
+        margin: 2%;
     }
 
     .hero-subtitle {
         font-size: 1rem;
+        margin: 8%;
     }
 
     .play-button {
-        font-size: 1rem;
+        font-size: 1.3rem;
         padding: 8px 16px;
+        border-bottom-style: groove;
+        border-top-style: groove;
+        margin: 6%;
     }
 
     .section-title {
         font-size: 1.6rem;
+        
     }
 
     .warrior-card {
-        width: 200px;
+        width: 390px;
+        
     }
 
     .warrior-card h3 {
-        font-size: 1rem;
+        font-size: 2.3rem;
     }
 
     .warrior-card p {
-        font-size: 0.8rem;
+        font-size: 1.3rem;
     }
 
     .cta-button {

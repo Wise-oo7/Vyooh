@@ -20,7 +20,6 @@ const Home = () => {
 
             {/* Page 2: Warriors Section */}
             <div className="page warriors-section">
-                <h2 className="section-title">The Legendary Warriors</h2>
                 <div className="warriors-grid">
                     <div className="warrior-card">
                         <img src="Krisna.jpg" alt="Krishna" className="warrior-image" />
