@@ -9,7 +9,7 @@ const Home = () => {
         <div className="home-container">
             {/* Page 1: Hero Section */}
             <div className="page hero-section">
-                <div className="hero-content">
+                <div className="hero-content d-flex flex-col">
                     <h1 className="hero-title">Enter the Epic Battle of Mahabharata</h1>
                     <p className="hero-subtitle">Choose your side and rewrite history!</p>
                     <button className="play-button" onClick={() => navigate("/play")}>
@@ -46,9 +46,9 @@ const Home = () => {
             </div>
 
             {/* Page 3: War Scene Section */}
-            <div className="page war-scene-section">
+            <div className="page war-scene-section d-flex flex-col">
                 <h2 className="section-title">The Great War of Kurukshetra</h2>
-                <div className="war-scene-content">
+                <div className="war-scene-content d-flex flex-col">
                     <p>
                         Witness the epic battle between the Pandavas and Kauravas. Choose your side, strategize, and lead your army to victory!
                     </p>
