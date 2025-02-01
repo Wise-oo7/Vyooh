@@ -49,12 +49,15 @@ const About = () => {
 
       <div className="video-box">
         <h3>Watch Our Story</h3>
-        <iframe 
-          src="https://www.youtube.com/embed/your-video-id" // Replace with your actual video URL
-          title="About Us Video"
-          frameBorder="0"
-          allowFullScreen
-        ></iframe>
+        <a href="https://www.youtube.com/@Vyuha-m1t" target="_blank" rel="noopener noreferrer">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with actual video URL
+            title="About Us Video"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </a>
+
       </div>
 
       <div className="footer">

@@ -6,12 +6,26 @@ const Partners = () => {
     // Check if the user is on mobile
     const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 
-    // Construct UPI URL for Google Pay, PhonePe, or Paytm
-    const upiURL = `upi://pay?pa=9644692482@upi&pn=Vyuh&cu=INR`;
-
-    // Open UPI URL in a new tab for mobile users, else show an alert for desktops
     if (isMobile) {
-      window.open(upiURL, '_blank'); // Open the UPI payment link for mobile users
+      // Ask user which payment method they prefer
+      const paymentMethod = window.prompt(
+        "Donate via:\n1️⃣ Google Pay (Type 'G')\n2️⃣ PhonePe (Type 'P')",
+        "G"
+      );
+
+      let upiURL = "";
+
+      if (paymentMethod?.toUpperCase() === "G") {
+        upiURL = `upi://pay?pa=shanatpandey.5-2@okaxis&pn=Vyuh&cu=INR`;
+      } else if (paymentMethod?.toUpperCase() === "P") {
+        upiURL = `upi://pay?pa=9644692482-2@ibl&pn=Vyuh&cu=INR`;
+      } else {
+        alert("Invalid option! Please type 'G' for Google Pay or 'P' for PhonePe.");
+        return;
+      }
+
+      // Open the UPI payment link for mobile users
+      window.open(upiURL, '_blank');
     } else {
       alert("UPI payments are only supported on mobile devices. Please use your phone to complete the donation.");
     }
@@ -40,11 +54,9 @@ const Partners = () => {
       <div className="qr-code-container">
         <img src="Donate.jpg" alt="QR Code for Donation" className="qr-code-image" />
       </div>
-      <p className="contact-info">-----</p>
-      <p className="contact-info">-----</p>
-      <p className="contact-info">😊Thanks a lot!✨</p>
-      <p className="contact-info">------</p>
-      <p className="contact-info">------</p>
+      <p style={{ textAlign: "center" }}>  </p>
+      <p style={{ textAlign: "center" }}>😊 Thanks a lot ✨✨✨</p>
+      <p style={{ textAlign: "center" }}>  </p>
     </div>
   );
 };

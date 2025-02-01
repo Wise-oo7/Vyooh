@@ -416,8 +416,8 @@ body {
 /* General styling */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 10;
+  padding: 10;
 }
 
 body {
@@ -429,9 +429,9 @@ body {
 
 /* Container for Partners content */
 .partners-container {
-  padding: 80px 20px 60px;
+  padding: 90px 30px 70px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 10 auto;
   color: #eee;
   text-align: center;
 }
@@ -469,7 +469,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .partners-container {
-    padding: 60px 15px;
+    padding: 70px 25px;
   }
 
   .partners-title {
@@ -482,7 +482,7 @@ body {
 
   .partners-button {
     font-size: 0.9em;
-    padding: 8px 16px;
+    padding: 15px 27px;
   }
 }
 
