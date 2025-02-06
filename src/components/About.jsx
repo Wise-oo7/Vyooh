@@ -51,7 +51,7 @@ const About = () => {
         <h3>Watch Our Story</h3>
         <a href="https://www.youtube.com/@Vyuha-m1t" target="_blank" rel="noopener noreferrer">
           <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with actual video URL
+            src="https://www.youtube.com/embed/dQw9WgXcQ" // Replace with actual video URL
             title="About Us Video"
             frameBorder="0"
             allowFullScreen

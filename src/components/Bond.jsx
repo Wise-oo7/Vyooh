@@ -276,7 +276,7 @@ const Board = () => {
              color: "Black",
              fontSize: "0.6rem",
              fontWeight: "lighter",
-             height: "65px", // Adjust for better display
+             height: "60px", // Adjust for better display
              width: "200px", // Adjust for better display
              borderRadius: "5px", // Optional: rounded corners
              textAlign: "center",

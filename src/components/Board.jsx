@@ -23,6 +23,9 @@ const Board = () => {
   const [winner, setWinner] = useState(null);
 
 
+  // Inside the Board component
+  const [kingLeftDices, setKingLeftDices] = useState(9); // Initial dice count for King
+  const [queenLeftDices, setQueenLeftDices] = useState(9); // Initial dice count for Queen
   const [removedPandavNames, setRemovedPandavNames] = useState([]);
   const [removedKauravNames, setRemovedKauravNames] = useState([]);
 
@@ -61,6 +64,21 @@ const Board = () => {
   // console.log(isKingTurn, "isKingTurn")
 
   const handleClick = (index) => {
+    
+    setButtons((prevButtons) => {
+      const newButtons = [...prevButtons];
+      const current = newButtons[index];
+    
+      if (kingCount < 9 - kingRemovals && isKingTurn && kingLeftDices > 0) {
+        setKingLeftDices((prev) => Math.max(prev - 1, 0)); // Ensure count doesn't go below 0
+      } else if (queenCount < 9 - queenRemovals && !isKingTurn && queenLeftDices > 0) {
+        setQueenLeftDices((prev) => Math.max(prev - 1, 0)); // Ensure count doesn't go below 0
+      }
+    
+      // Rest of your existing logic...
+      return newButtons;
+    });
+
     console.log(index, "index");
     const audio = new Audio('gt.mp3');
 
@@ -222,7 +240,15 @@ const Board = () => {
 
   return (
     <>
-      <PlayerCount kingRemovalCount={kingRemovalCount} queenRemovalCount={queenRemovalCount} kingTime={kingTime} queenTime={queenTime} />
+        <PlayerCount
+            kingRemovalCount={kingRemovalCount}
+            queenRemovalCount={queenRemovalCount}
+            kingTime={kingTime}
+            queenTime={queenTime}
+            kingLeftDices={kingLeftDices}
+            queenLeftDices={queenLeftDices}
+        />
+        
       <div className="rectangle-container Board-background">
         {buttons.map((btn, index) => (
           <button
@@ -266,7 +292,7 @@ const Board = () => {
           <div
             className="blinking-light"
             style={{
-              backgroundColor: isKingTurn ? "rgb(246, 118, 6)" : "rgb(24, 170, 228",
+              backgroundColor: isKingTurn ? "rgb(246, 118, 6)" : "rgb(24, 170, 228)",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",

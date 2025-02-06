@@ -19,7 +19,7 @@ body * {
 /* Remove Button  */
 .message-container {
   position: absolute;
-  top: 10px;
+  top: 12px;
   /* Distance from the top */
   left: 10px;
   /* Distance from the left */
@@ -28,7 +28,7 @@ body * {
   /* Semi-transparent background */
   color: white;
   /* Text color */
-  font-size: 14px;
+  font-size: 64px;
   /* Text size */
   border-radius: 8px;
   /* Rounded corners */
@@ -56,11 +56,11 @@ body * {
 .remove-button {
   position: absolute;
   padding: 5px 5px;
-  font-size: 12px;
+  font-size: 15px;
   color: #ffffff;
   background-color: red;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   transform: translate(-103%, -180%);
@@ -110,8 +110,8 @@ body * {
 /* Button styles */
 .rectangle-button {
   position: absolute;
-  width: 20px;
-  height: 40px;
+  width: 38px;
+  height: 45px;
   background-color: white;
   border: 1px solid black;
   font-size: 13px;
@@ -119,19 +119,42 @@ body * {
   color: red;
   cursor: pointer;
   z-index: 1;
-  border-radius: 1;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.1s;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
+
 .selected {
-  transform: scale(1.1);
-  /* Slightly enlarge the selected button */
-  border: 2px solid blue;
-  /* Blue border to show it’s selected */
+  transform: scale(1.1); /* Slightly enlarge the button */
+  border: 2px solid #007bff; /* Blue border for selection */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Glow effect */
+  color: #ffffff; /* White text for contrast */
+  animation: dance 0.9s infinite ease-in-out; /* Dance animation */
+  transform-origin: flex; /* Ensures rotation happens around center */
 }
+
+/* Dance animation for the selected button */
+@keyframes dance {
+  0% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(0deg);
+  }
+}
+
 
 /* Button positions for the 3 rectangles */
 /* Outer Rectangle */

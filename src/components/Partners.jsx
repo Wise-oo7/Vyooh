@@ -56,6 +56,9 @@ const Partners = () => {
       </p>
 
       <button onClick={handleDonateClick} className="partners-button">Donate Now</button>
+      <div className="qr-code-container">
+      <img src="Donate.jpg" alt="QR Code for Donation" className="qr-code-image" />
+      </div>
       <p style={{ textAlign: "center" }}> </p>
       <p style={{ textAlign: "center" }}>😊Thanks a lot!✨</p>
       <p style={{ textAlign: "center" }}> </p>
